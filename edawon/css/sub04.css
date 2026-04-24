@@ -1,0 +1,981 @@
+@charset "UTF-8";
+
+/* 나눔 스퀘어 굵기별 폰트명
+font-family: 'NanumSquareAcl';
+font-family: 'NanumSquareAcr';
+font-family: 'NanumSquareAcb';
+font-family: 'NanumSquareAceb';
+*/
+
+/* Playfair Display 굵기별 수치
+font-weight: 400;  Regular
+font-weight: 500;  Medium
+font-weight: 600;  SemiBold
+font-weight: 700;  Bold
+font-weight: 800;  ExtraBold
+font-weight: 900;  Black
+*/
+
+/* nanum-myeongjo 굵기별 수치
+
+font-family: "Nanum Myeongjo";
+
+font-weight: 400;  Regular
+font-weight: 700;  Bold
+font-weight: 800;  ExtraBold
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'NanumSquareAcb';
+}
+
+body {
+  background-color: #FAFAF9;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+html {
+  scroll-behavior: smooth; /* 스크롤 이동 부드럽게 */
+}
+
+/* 헤더 영역 */
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 상단 띠 배너 */
+#top-notice {
+  width: 100%;
+  height: 41px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 50px 12px 62.2px;
+  background-color: #003811;
+}
+
+#top-notice p {
+  width: 100%;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  /*background-color: lightblue;*/
+}
+
+.close-btn {
+  border: none;
+  background-color: #003811;
+  cursor: pointer;
+}
+
+#top-notice img {
+  display: block;
+}
+
+/* 헤더 내 네비 */
+nav {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 280px;    /* w 29px */
+  background-color: #FAFAF9;
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+  /*background-color: lightblue;*/
+}
+
+/* 좌우에 고정 */
+nav .nav_left { justify-content: left; }
+nav .nav_right { justify-content: right; }
+
+nav ul li {
+  font-size: 15px;
+}
+
+nav .nav_left li a {
+  position: relative;
+  display: inline-block;
+  /*background-color: lightgreen;*/
+  /*transition: all 0.3s;*/
+}
+
+.nav_left li a:hover {
+  color: transparent; /* 기존 'SHOP' 글자를 투명하게 숨김 */
+}
+
+.nav_left li a::after {
+  content: attr(data-hover); /* HTML의 data-hover 값을 가져옴 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* 평소에는 안 보이게 */
+  /*transition: all 0.3s;*/
+  white-space: nowrap;
+}
+
+.nav_left li a:hover::after {
+  opacity: 1; /* 호버 시 '쇼핑' 등장 */
+  color: #003811; /* 포인트 컬러 */
+}
+
+.nav_left li .point {
+  color: #003811; /* 포인트 컬러 */
+  border-bottom: 1px solid #003811;
+}
+
+
+/* 검색창 영역 */
+nav .nav_right .ck_input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* 체크박스 숨기기 */
+nav .ck_input .hidden-check {
+  display: none;
+}
+
+/* 입력창 초기 상태 (숨김) */
+nav .ck_input .search_area {
+  border: none;
+  background-color: rgba(225, 225, 225, 0.5);
+  border-radius: 100px;
+  
+  /* 숨김 설정 */
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  
+  /* 펼쳐질 때 효과 */
+  transition: all 0.3s ease-in-out; 
+  outline: none; /* 입력창 클릭 시 생기는 까만 테두리 제거 */
+}
+
+/* 체크박스가 선택되었을 때 펼침 상태 */
+.hidden-check:checked + .search_area {
+  max-width: 200px; /* 입력창 넓이에 맞춰 조절 */
+  opacity: 1;
+  padding: 0 10px;
+}
+
+
+/* 메인 영역 */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 상단 배너 */
+#top_banner {
+  width: calc(1360 / 1920 * 100%);
+  height: 570px;
+  margin-top: 30px;
+  background-image: url(../img/sub04/sub04_banner.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  padding-top: 150px;
+  align-items: center;
+}
+
+#top_banner p {
+  font-family: "Nanum Myeongjo";
+  font-size: 70px;
+  font-weight: 800;
+  color: #fff;
+}
+
+#top_banner .line {
+  width: 1px;
+  height: 100%;
+  /*height: 251px;*/
+  background-color: #FAFAF9;
+}
+
+
+/* 컨텐츠01 */
+#content01 {
+  width: calc(1360 / 1920 * 100%);
+  height: 836px;
+  padding: 150px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#content01 .content_img {
+  flex: 0 0 calc(789 / 1360 * 100%);
+  height: 100%;
+  background-image: url(../img/sub04/tea01.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#content01 .title {
+  flex: 0 0 calc(471 / 1360 * 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+#content01 .title p:nth-of-type(1) {
+  font-family: "Nanum Myeongjo";
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+#content01 .title p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 20px;
+  line-height: 40PX;
+  color: #777;
+}
+
+
+/* 컨텐츠02 */
+#content02 {
+  width: 100%;
+  height: 445px;
+  padding: 120px 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center ;
+  background-color: #F3F1ED;
+}
+
+#content02 .content_wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 74px;
+  align-items: center;
+}
+
+#content02 .content_wrap p {
+  font-family: "Nanum Myeongjo";
+  font-size: 30px;
+  font-weight: 700;  /* bold */
+  line-height: 150%;
+  color: #003811;
+}
+
+#content02>p {
+  font-size: 18px;
+  line-height: 40px;
+  color: #777;
+}
+
+
+/* 컨텐츠03 */
+#content03 {
+  width: 100%;
+  height: 1024px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* 컨텐츠03 이미지 */
+#content03 .content_img {
+  width: calc(603 / 1920 * 100%);
+  height: 100%;
+  background-image: linear-gradient(to right,#ffffff00 30%,  #fafaf928 45%, #fbfbfa80 55%, #fbfbfac3 65%, #FAFAF9 80%), url(../img/sub04/coffee_bean02.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* 컨텐츠03 메인 영역 */
+#content03 .content_wrap {
+  width: calc(1317 / 1920 * 100%);
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  padding: 150px 0;
+  justify-content: left;
+  /*background-color: lightblue;*/
+}
+
+/* 메인영역 좌측 */
+#content03 .content_wrap .left {
+  flex: 0 0 calc(521 / 1317 * 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+#content03 .content_wrap .left>p:nth-of-type(1) {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+#content03 .content_wrap .left>p:nth-of-type(2) {
+  font-size: 20px;
+  line-height: 150%;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+#content03 .content_wrap .icon_group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+#content03 .content_wrap .icon_group .img {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#content03 .content_wrap .text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#content03 .content_wrap .text p:nth-of-type(1) {
+  font-size: 18px;
+}
+
+#content03 .content_wrap .text p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 16px;
+  color: #777;
+}
+
+/* 라인 */
+#content03 .content_wrap .line {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(147, 141, 130, 0.3);
+}
+
+/* 메인영역 우측 */
+#content03 .content_wrap .right {
+  flex: 0 0 calc(514 / 1317 * 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+#content03 .content_wrap .right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  /*background-color: lightcoral;*/
+}
+
+#content03 .content_wrap .right li {
+  position: relative;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+#content03 .content_wrap .right li::before {
+  content: ""; /* 빈 공간 생성 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+  /* 4. 동그라미 모양과 크기, 색상 설정 */
+  width: 8px;
+  height: 8px;
+  background-color: #003811; 
+  border-radius: 50%;
+}
+
+#content03 .content_wrap .right li p:nth-of-type(1) {
+  font-family: 'NanumSquareAceb';
+  font-size: 18px;
+  color: #938D82;
+}
+
+#content03 .content_wrap .right li p:nth-of-type(2) {
+  font-family: 'NanumSquareAceb';
+  font-size: 20px;
+}
+
+#content03 .content_wrap .right li p:nth-of-type(3) {
+  font-family: 'NanumSquareAcr';
+  font-size: 16px;
+  color: #777;
+}
+
+
+/* 컨텐츠04 */
+#content04 {
+  width: 100%;
+  height: 710px;
+  padding: 150px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+#content04 .title {
+  width: calc(434 / 1920 * 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+#content04 .title>p:nth-of-type(1) {
+  font-family: "Nanum Myeongjo";
+  font-weight: 800;  /* ExtraBold */
+  font-size: 40px;
+  line-height: 45px;
+  margin-bottom: 40px;
+}
+
+#content04 .title>p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 20px;
+  line-height: 35px;
+  color: #777;
+  margin-bottom: 80px;
+}
+
+#content04 .title .title_wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+#content04 .title .title_wrap .text {
+  text-align: center;
+}
+
+#content04 .title .title_wrap .text p:nth-of-type(1) {
+  font-size: 25px;
+  color: #003811;
+}
+
+#content04 .title .title_wrap .text p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 20px;
+  color: #777;
+}
+
+#content04 .title .title_wrap .line {
+  width: 1px;
+  height: 60px;
+  margin: 0 5px;
+  background-color: #ccc;
+}
+
+#content04 .content_img {
+  width: calc(776 / 1920 * 100%);
+  height: 100%;
+  background-image: url(../img/sub04/rosting01.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* 컨텐츠05 */
+#content05 {
+  width: 100%;
+  height: 855px;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  align-items: center;
+  text-align: center;
+  padding: 150px 0;
+  background-color: #F3F1ED;
+}
+
+#content05 .title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#content05 .title>p:nth-of-type(1) {
+  font-family: "Nanum Myeongjo";
+  font-weight: 800;  /* ExtraBold */
+  font-size: 40px;
+  line-height: 45px;
+}
+
+#content05 .title>p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 20px;
+  line-height: 30px;
+  color: #777;
+}
+
+#content05 .card_group {
+  width: calc(1360 / 1920 * 100%);
+  display: flex;
+  flex-direction: row;
+  gap: 67px;
+  padding: 0 70px;
+}
+
+#content05 .card_group .card {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  transition: 0.2s ease;
+}
+
+/* 카드 호버 시 효과 */
+#content05 .card_group .card:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  scale: 99%;
+}
+
+#content05 .card_group .card .number {
+  width: 53px;
+  height: 52px;
+  padding: 15px;
+  border-radius: 100%;
+  font-family: 'NanumSquareAceb';
+  font-size: 18px;
+  line-height: 22px;
+}
+
+#content05 .card_group .n1 .number {
+  color: #A44E03;
+  background-color: #FCEEB6;
+}
+
+#content05 .card_group .n2 .number {
+  color: #940533;
+  background-color: #FEE7EE;
+}
+
+#content05 .card_group .n3 .number {
+  color: #063393;
+  background-color: #DDEBFD;
+}
+
+#content05 .card_group .card p:nth-of-type(1) {
+  font-size: 27px;
+}
+
+#content05 .card_group .card p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 16px;
+  line-height: 28px;
+  color: #777;
+  text-align: left;
+}
+
+
+/* 컨텐츠06 */
+#content06 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 150px 0;
+  align-items: center;
+}
+
+/* 컨텐츠06 타이틀 */ 
+#content06 .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#content06 .title h1 {
+  font-size: 40px;
+  letter-spacing: 2%;
+}
+
+#content06 .title>p {
+  font-family: 'NanumSquareAcr';
+  font-size: 20px;
+  letter-spacing: 2%;
+  color: #777;
+}
+
+/* 컨텐츠06 메인 영역 */
+#content06 .map_group {
+  width: calc(1360 / 1920 * 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  /*background-color: lightblue;*/
+}
+
+#content06 .map_group .map {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /*background-color: lightgoldenrodyellow;*/
+}
+
+#content06 .map_img {
+  flex: 0 0 calc(290 / 660 * 100%);
+  height: 377px;
+  background-color: lightcoral;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 매장 별 이미지 설정 */
+#content06 .n1 .map_img { background-image: url(../img/etc/edawon01.jfif); }
+#content06 .n2 .map_img { background-image: url(../img/etc/edawon02.jfif); }
+
+/* 각 텍스트 별 설정 */
+#content06 .text>p {
+  font-size: 25px;
+  letter-spacing: 2%;
+  margin-bottom: 50px;
+}
+
+#content06 .text ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#content06 .text ul p {
+  font-family: 'NanumSquareAcr';
+  font-size: 15px;
+  letter-spacing: 2%;
+  color: #777;
+}
+
+#content06 .text ul .bold {
+  font-family: 'NanumSquareAcb';
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 컨텐츠07 */
+#content07 {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: row;
+  padding: 100px 0 ;
+  align-items: center;
+  justify-content: center;
+}
+
+#content07 .left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 100px;
+  background-color: #F3F1ED;
+}
+
+#content07 .left .text {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /*background-color: lightblue;*/
+}
+
+#content07 .left p:nth-of-type(1) {
+  font-family: "Nanum Myeongjo";
+  font-weight: 700;  /* Bold */
+  font-size: 35px;
+}
+
+#content07 .left p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 20px;
+  line-height: 25px;
+  color: #777;
+}
+
+#content07 .right {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+  background-color: #222;
+}
+
+#content07 .right .text {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /*background-color: lightblue;*/
+}
+
+#content07 .right p:nth-of-type(1) {
+  font-family: "Nanum Myeongjo";
+  font-weight: 700;  /* Bold */
+  font-size: 35px;
+  color: #fff;
+}
+
+#content07 .right p:nth-of-type(2) {
+  font-family: 'NanumSquareAcr';
+  font-size: 20px;
+  line-height: 25px;
+  color: #ccc;
+}
+
+
+/* 퀵버튼 */
+#quick_button {
+  position: absolute;
+  width: 50px;
+  height: 96px;
+  background-color: #fff;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border-radius: 10px;
+  border: 0.5px solid #C5C5C5;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  top: 82%;
+  right: 3%;
+  position: fixed;
+}
+
+#quick_button .bt {
+  width: 100%;
+  height: 40px;
+  /*background-color: lightblue;*/
+  background-size: cover;
+  background-position: center;
+}
+
+#quick_button .up { background-image: url(../img/icon/up_b.png); }
+#quick_button .down { background-image: url(../img/icon/down_b.png); }
+
+/* 버튼 호버 시 색상 변경 */
+#quick_button .up:hover { background-image: url(../img/icon/up_g.png); transition: 0.1s ease; }
+#quick_button .down:hover { background-image: url(../img/icon/down_g.png); transition: 0.1s ease; }
+
+/* 구분선 */
+#quick_button .line {
+  width: 20px;
+  height: 1px;
+  background-color: #9E9E9E;
+}
+
+
+/* 카테고리 */
+#category_nav {
+  position: absolute;
+  top: 50%;
+  left: 92%;
+  transform: translateY(-50%);
+  position: fixed;
+  /*background-color: lightblue;*/
+}
+
+#category_nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#category_nav ul li {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  /*background-color: lightblue;*/
+}
+
+#category_nav .line {
+  width: 10px;
+  height: 10px;
+  background-color: #E0DBD1;
+  border-radius: 100px;
+  margin: 10px;
+}
+
+#category_nav p {
+  font-size: 16px;
+  line-height: 30px;
+  color: #003811;
+  /*display: none;*/
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* 버튼 호버 시 색상 변경 */
+#category_nav ul li:hover .line  {
+  height: 40px;
+  background-color: #003811;
+  transition: 0.3s ease;
+}
+
+#category_nav ul li:hover p  {
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+/* 스크롤 이동 시 상단 여백 추가 */
+section {
+  /* 화면 높이(50vh) 정도의 여백을 스크롤 위치에 부여 */
+  scroll-margin-top: 5vh; 
+}
+
+
+/* 푸터 영역 */
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 70px 100px;
+  background-color: #222;
+  z-index: 1;
+}
+
+/* 푸터 상단 */
+footer .top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+/* 상단 좌측 영역 */
+footer .top .left {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+footer .top .left ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* 소셜 영역 */
+footer .top .sns {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-end;
+}
+
+/* 푸터 구분선 */
+footer .line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+
+/* 푸터 하단 */
+footer .bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+footer .bottom>div {
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 2%;
+  color: #ccc;
+}
+
+footer .bottom span {
+  font-size: 20px;
+}
+
+footer .bottom .right a {
+  color: #1481FF;
+}
+
+
+
+/*애니메이션 효과*/
+
+/* 탭 부드러운 등장 애니메이션 */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* 아래에서 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 */
+  }
+}

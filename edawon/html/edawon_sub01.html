@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" con tent="width=device-width, initial-scale=1.0">
+  <title>SHOP</title>
+  <link rel="stylesheet" href="../css/sub01.css">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+  <!--헤더 영역-->
+  <header>
+    <!--상단 회원가입 팝업 버튼-->
+    <div id="top-notice" class="promo-bar">
+      <p>회원가입 후 시그니처 원두를 10% 할인된 가격에 구입해보세요!</p>
+      <button class="close-btn"><img src="../img/icon/close.png" alt="" width="12.2" height="12.2"></button>
+    </div>
+
+    <!--로고 및 메뉴들-->
+    <nav>
+      <ul class="nav_left">
+        <li><a href="./edawon_sub01.html" data-hover="쇼핑" class="point">SHOP</a></li>
+        <li><a href="./edawon_sub02.html" data-hover="커스텀">CUSTOM</a></li>
+        <li><a href="./edawon_sub03.html" data-hover="도매">WHOLESALE</a></li>
+        <li><a href="./edawon_sub04.html" data-hover="회사소개">ABOUT</a></li>
+        <li><a href="./edawon_sub05.html" data-hover="커뮤니티">COMMUNITY</a></li>
+      </ul>
+
+      <a href="./edawon_index.html" class="logo"><img src="../img/icon/logo01.png" alt="" width="203" height="68"></a>
+
+      <ul class="nav_right">
+        <li class="ck_input">
+          <input type="checkbox" id="search_icon" class="hidden-check">
+          <input type="search" class="search_area" placeholder="검색">
+          <label for="search_icon"><img src="../img/icon/search.png" alt="" width="24" height="24"></label>
+        </li>
+        
+        <li><a href="./edawon_login.html">로그인</a></li>
+        <li><a href="./edawon_signup.html">회원가입</a></li>
+        <li><a href="#"><img src="../img/icon/shopping-basket.png" alt="" width="25" height="24.75"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--메인 영역-->
+  <main>
+    <!--상단 배너-->
+    <section id="top_banner">
+      <p>기본적이고 작은 것들이 모여서 맛을 이룹니다.</p>
+    </section>
+
+    <!--컨텐츠01-->
+    <section id="content01">
+      <p class="title">커피원두</p>
+
+      <!--탭메뉴-->
+      <input type="radio" name="tabmenu01" id="coffee_tab01" class="tab_input" checked>
+      <input type="radio" name="tabmenu01" id="coffee_tab02" class="tab_input">
+
+      <div class="sub_filters">
+        <label for="coffee_tab01">시그니처 블렌드</label>
+        <label for="coffee_tab02">싱글오리진/디카페인</label>
+        <a href="./edawon_sub02.html">커스텀</a>
+      </div>
+
+      <!--시그니처 블렌드 리스트-->
+      <div class="teb coffee_list_A">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">아날로그 블렌드</p>
+          <p class="des">부드럽고 고소한 맛, 풍성한 바디감, 구운 아몬드</p>
+          <p class="price"><del>8,500원</del> <span class="orange">7,700원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">시그니처 블렌드</p>
+          <p class="des">화사한 꽃향기, 상큼한 신맛, 달콤한 꿀</p>
+          <p class="price"><del>12,500원</del> <span class="orange">11,300원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">초콜릿 블렌드</p>
+          <p class="des">자스민, 오렌지, 다크 초콜릿</p>
+          <p class="price">28,200원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">하우스 블렌드</p>
+          <p class="des">묵직한 바디감, 달콤한 초콜릿, 화사한 향기</p>
+          <p class="price">25,500원</p>
+        </a>
+      </div> <!--coffee_list_A-->
+
+      <!--싱글오리진/디카페인 리스트-->
+      <div class="teb coffee_list_B">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">예멘 모카 마타리</p>
+          <p class="des">다크 초콜릿, 와인, 두터운 바디감</p>
+          <p class="price"><del>24,800원</del> <span class="orange">22,300원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">파나마 게이샤</p>
+          <p class="des">자스민, 레몬밤, 복숭아</p>
+          <p class="price"><del>55,300원</del> <span class="orange">49,800원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">에티오피아 예가체프</p>
+          <p class="des">화사한 꽃향기, 시트러스한 과일맛, 가벼운 바디감</p>
+          <p class="price"><del>21,700원</del> <span class="orange">19,500원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">케냐 AA</p>
+          <p class="des">감귤, 베리, 부드러운 바디감</p>
+          <p class="price"><del>20,600원</del> <span class="orange">18,500원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n5">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">콜롬비아 수프리모</p>
+          <p class="des">와인 향, 초콜릿, 부드러운 바디감</p>
+          <p class="price"><del>18,000원</del> <span class="orange">16,200원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n6">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">콜롬비아 디카페인</p>
+          <p class="des">다크 초코릿, 크림, 호두</p>
+          <p class="price">20,200원</p>
+        </a>
+      </div> <!--coffee_list_B-->
+    </section> <!--content01-->
+
+    <!--컨텐츠02-->
+    <section id="content02">
+      <p class="title">차(티백)</p>
+
+      <!--탭메뉴-->
+      <input type="radio" name="tabmenu02" id="tea_tab01" class="tab_input" checked>
+      <input type="radio" name="tabmenu02" id="tea_tab02" class="tab_input">
+      <input type="radio" name="tabmenu02" id="tea_tab03" class="tab_input">
+      <input type="radio" name="tabmenu02" id="tea_tab04" class="tab_input">
+
+      <div class="sub_filters">
+        <label for="tea_tab01">녹차 · 홍차</label>
+        <label for="tea_tab02">우롱차 · 보이차</label>
+        <label for="tea_tab03">허브티 · 블렌딩티</label>
+        <label for="tea_tab04">한방차</label>
+      </div>
+
+      <!--녹차 · 홍차 리스트-->
+      <div class="teb tea_list_A">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">프리미어스</p>
+          <p class="pdName">홍차 아쌈 CTC 100g</p>
+          <p class="des">진하고 부드러운 로얄 밀크티</p>
+          <p class="price">15,300원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">딜마</p>
+          <p class="pdName">홍차 실론 25티백</p>
+          <p class="des">시원한 아이스티와 밀크티로 좋은 실론</p>
+          <p class="price">11,500원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img"></div>
+          <p class="brandName">딜마</p>
+          <p class="pdName">얼그레이 125g</p>
+          <p class="des">지중해 열대과일 베르가못의 향이 입안 가득</p>
+          <p class="price">21,000원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img"></div>
+          <p class="brandName">햄스테드</p>
+          <p class="pdName">유기농 얼그레이 20티백</p>
+          <p class="des">이탈리아 칼라브리아 지역의 베르가못을 블렌딩</p>
+          <p class="price">11,900원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n5">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">보성녹차</p>
+          <p class="pdName">유기농 녹차 중작 100g</p>
+          <p class="des">깊고 은은한 녹차의 맛과 향</p>
+          <p class="price">일시품절</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n6">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">보성녹차</p>
+          <p class="pdName">유기농 녹차 세작 100g</p>
+          <p class="des">연녹색 찻물에 싱그러운 향과 풋풋한 맛</p>
+          <p class="price">일시품절</p>
+        </a>
+      </div> <!--coffee_list_A-->
+
+      <!--우롱차 · 보이차 리스트-->
+      <div class="teb tea_list_B">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">차예마을</p>
+          <p class="pdName">특급 소타차 운남성 보이차 150g </p>
+          <p class="des">랑하차창에서 좋은 병차와 동일한 등급의 찻잎으로 만든 고급 소타차</p>
+          <p class="price">21,100원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">차예마을</p>
+          <p class="pdName">대만 우롱차 사계춘 50g </p>
+          <p class="des">대만 우롱차 중 비교적 새로운 품종 (청차)</p>
+          <p class="price">15,500원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img"></div>
+          <p class="brandName">차예마을</p>
+          <p class="pdName">대만 우롱차 사계춘 50g</p>
+          <p class="des">대만 우롱차 중 비교적 새로운 품종 (청차)</p>
+          <p class="price">15,500원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img"></div>
+          <p class="brandName">차예마을</p>
+          <p class="pdName">운남성 노동지 보이차 30티백</p>
+          <p class="des">해만차창의 노동지를 세절하여 티백망에 넣은 제품</p>
+          <p class="price">9,200원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n5">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">차예마을</p>
+          <p class="pdName">대만 우롱차 동정우롱 50g</p>
+          <p class="des">대만을 대표하는 우롱차</p>
+          <p class="price">일시품절</p>
+        </a>
+      </div>
+
+      <!--허브티 · 블렌딩티 리스트-->
+      <div class="teb tea_list_C">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">트와이닝</p>
+          <p class="pdName">페퍼민트차 25티백</p>
+          <p class="des">페퍼민트의 청량감이 느껴지는 상쾌한 맛과 향</p>
+          <p class="price"><del>8,000원</del> <span class="orange">3,500원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">런던프룻</p>
+          <p class="pdName">스위트 캐모마일 20티백</p>
+          <p class="des">차분한 꽃향기의 캐모마일과 꿀의 풍미가 가득한 허브티</p>
+          <p class="price">일시품절</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">런던프룻</p>
+          <p class="pdName">피치 파라다이스 20티백</p>
+          <p class="des">달콤한 복숭아 과육의 풍미가 가득한 과일&허브 인퓨전</p>
+          <p class="price">일시품절</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img"></div>
+          <p class="brandName">테틀리</p>
+          <p class="pdName">캐모마일&오렌지 20티백</p>
+          <p class="des">오렌지향 가득한 블렌디드 티</p>
+          <p class="price"><del>8,500원</del> <span class="orange">6,000원</span></p>
+        </a>
+      </div>
+
+      <!--한방차 리스트-->
+      <div class="teb tea_list_D">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">옴니허브</p>
+          <p class="pdName">제주 유기농 귤피차 25파우치</p>
+          <p class="des">부담없이 즐기는 향긋한 귤피의 향</p>
+          <p class="price">11,300원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">옴니허브</p>
+          <p class="pdName">돼지감자차 120g</p>
+          <p class="des">변비와 다이어트에 좋은 돼지감자</p>
+          <p class="price">12,200원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">옴니허브</p>
+          <p class="pdName">우엉차 100g</p>
+          <p class="des">개운하고 깔끔한 우엉차의 향</p>
+          <p class="price">일시품절</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">옴니허브</p>
+          <p class="pdName">제주 유기농 귤피차 100티백</p>
+          <p class="des">입안 가득 퍼지는 귤피의 향긋함</p>
+          <p class="price">일시품절</p>
+        </a>
+      </div>
+    </section> <!--content02-->
+
+    <!--컨텐츠03-->
+    <section id="content03">
+      <div class="teb set_list">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="set_title">
+            <p>* 세트 상품 *</p>
+            <p>브랜드 별 인기 라인업을 확인하세요!</p>
+          </div>
+          <div class="title_img"></div>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">이다원</p>
+          <p class="pdName">블렌드 라인 샘플 키트</p>
+          <p class="des">블렌드 라인 4종, 각 30g</p>
+          <p class="price">4,000원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">테틀리</p>
+          <p class="pdName">티 컬렉션 24티백</p>
+          <p class="des">홍차&허브차 6종 X 각 4개입</p>
+          <p class="price">일시품절</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">트와이닝</p>
+          <p class="pdName">클래식 차 컬렉션 20티백</p>
+          <p class="des">클래식 홍차 5종 X 각 4개입</p>
+          <p class="price">일시품절</p>
+        </a>
+      </div>
+    </section>
+    
+    <!--컨텐츠04-->
+    <section id="content04">
+      <p class="title">커피 용품</p>
+      <div class="teb tool_list">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">하리오</p>
+          <p class="pdName">V60 브라운 종이필터 02M 100매</p>
+          <p class="des">VCF-02-100M</p>
+          <p class="price">4,200원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">하리오</p>
+          <p class="pdName">V60 렌지 서버 600ml</p>
+          <p class="des">XVD-60B</p>
+          <p class="price">9,500원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img"></div>
+          <p class="brandName">제니스코</p>
+          <p class="pdName">2T 커피 스쿱 10g</p>
+          <p class="des">ZC-4859</p>
+          <p class="price">4,000원</p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img">
+            <div class="img_soldOut">일시<br>품절</div>
+          </div>
+          <p class="brandName">리위옌</p>
+          <p class="pdName">스테인레스 계량 스푼 3g</p>
+          <p class="des"></p>
+          <p class="price">일시품절</p>
+        </a>
+      </div>
+    </section>
+
+    <!--컨텐츠05-->
+    <section id="content05">
+      <div class="title">
+        <img src="../img/icon/super_sale.png" alt="" width="100" height="100">
+        <div class="text_wrap">
+          <p>특가 할인</p>
+          <p>소비기한 임박제품을 특별 할인된 가격에 판매합니다.</p>
+        </div>
+      </div>
+
+      <div class="teb sele_list">
+        <a href="./edawon_detail.html" class="card n1">
+          <div class="card_img"></div>
+          <p class="brandName">트와이닝</p>
+          <p class="pdName">페퍼민트차 25티백</p>
+          <p class="des">페퍼민트의 청량감이 느껴지는 상쾌한 맛과 향</p>
+          <p class="price"><del>8,000원</del> <span class="orange">3,500원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n2">
+          <div class="card_img"></div>
+          <p class="brandName">테틀리</p>
+          <p class="pdName">캐모마일&오렌지 20티백</p>
+          <p class="des">오렌지향 가득한 블렌디드 티</p>
+          <p class="price"><del>8,500원</del> <span class="orange">6,000원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n3">
+          <div class="card_img"></div>
+          <p class="brandName">트와이닝</p>
+          <p class="pdName">페퍼민트차 25티백</p>
+          <p class="des">페퍼민트의 청량감이 느껴지는 상쾌한 맛과 향</p>
+          <p class="price"><del>8,000원</del> <span class="orange">3,500원</span></p>
+        </a>
+
+        <a href="./edawon_detail.html" class="card n4">
+          <div class="card_img"></div>
+          <p class="brandName">테틀리</p>
+          <p class="pdName">캐모마일&오렌지 20티백</p>
+          <p class="des">오렌지향 가득한 블렌디드 티</p>
+          <p class="price"><del>8,500원</del> <span class="orange">6,000원</span></p>
+        </a>
+      </div>
+    </section>
+
+    <!--컨텐츠06-->
+    <section id="content06">
+      <!--탭메뉴-->
+      <input type="radio" name="tabmenu03" id="guide_tab01" class="tab_input" checked>
+      <input type="radio" name="tabmenu03" id="guide_tab02" class="tab_input">
+
+      <div class="sub_filters">
+        <label for="guide_tab01">원두 보관 가이드</label>
+        <label for="guide_tab02">추출 가이드</label>
+      </div>
+
+      <!--원두 보관 가이드-->
+      <div class="teb guide_tab01">
+        <div class="card n1">
+          <img src="../img/icon/hot.png" alt="" width="40" height="40">
+          <p>상온 보관 ( Golden Time )</p>
+          <p>
+            로스팅 후 3일~2개월 사이가 가장 맛있습니다.<br>
+            아로마 밸브가 달린 봉투 그대로 서늘한 곳에 보관하세요.
+          </p>
+        </div>
+
+        <div class="card n2">
+          <img src="../img/icon/prohibition.png" alt="" width="40" height="40">
+          <p>냉장 보관 주의</p>
+          <p>
+            커피는 주변 냄새를 강력하게 흡수합니다.<br>
+            냉장고 대신 밀폐 용기를 사용하여 직사광선을 피해주세요.
+          </p>
+        </div>
+
+        <div class="card n3">
+          <img src="../img/icon/snowflake.png" alt="" width="40" height="40">
+          <p>장기 냉동 보관</p>
+          <p>
+            2주 이상 보관 시에는 지퍼백에 밀봉 후 냉동하세요.<br>
+            사용 전 실온에서 충분히 해동하는 것이 중요합니다.
+          </p>
+        </div>
+      </div> <!--guide_tab01-->
+
+      <!--추출 가이드-->
+      <div class="teb guide_tab02">
+        <div class="card n1">
+          <p>01</p>
+          <p>분쇄도 설정</p>
+          <p>
+            핸드드립 기준,<br>
+            <ins>굵은 소금 정도의 크기</ins>로 분쇄하는 것이<br>
+            원두의 풍미를 가장 잘 살려줍니다.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="card n2">
+          <p>02</p>
+          <p>물 온도 (90-92°C)</p>
+          <p>
+            끓는 물을 한 김 식힌 후 추출하세요.<br>
+            너무 뜨거운 물은 쓴맛을,<br>
+            너무 낮은 온도는 신맛을 강조합니다.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="card n3">
+          <p>03</p>
+          <p>추출 시간</p>
+          <p>
+            뜸 들이기 30초를 포함하여 총 <ins>2분 30초에서<br>
+            3분 이내</ins>에  추출을 마치는 것이<br>
+            깔끔한 뒷맛을 보장합니다.
+          </p>
+        </div>
+      </div> <!--guide_tab02-->
+    </section>
+
+    <!--컨텐츠07-->
+    <section id="content07">
+      <p>Real Reviews</p>
+      <div class="review_list">
+        <div class="card n1">
+          <div class="star_wrap">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+          </div>
+          
+          <p>
+            “ 또 구매 할겁니다. 너무 만족합니다. “
+          </p>
+
+          <div class="review_wrap">
+            <div class="top">
+              <p>imsh****</p>
+              <p>[ 2026-02-19 ]</p>
+            </div>
+            <p>초콜릿 블렌드 커피 원두 구매</p>
+          </div>
+        </div> <!--card-->
+
+        <div class="card n2">
+          <div class="star_wrap">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+          </div>
+          
+          <p>
+            “ 커피향이 좋아서 4번째 신청합니다. “
+          </p>
+
+          <div class="review_wrap">
+            <div class="top">
+              <p>saj1****</p>
+              <p>[ 2026-01-21 ]</p>
+            </div>
+            <p>케냐 AA 커피 원두 구매</p>
+          </div>
+        </div> <!--card-->
+
+        <div class="card n3">
+          <div class="star_wrap">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+          </div>
+          
+          <p>
+            “ 늘 주문해왔어요. 지난번에는 초콜렛 블렌드 주문했었는데 초콜릿도 너무 향도 좋고 맛있었어요. 
+            금액이 조금 올라서ㅠㅠ 이번엔 하우스로 다시 주문했어요. 그때그때 번갈아서 주문해보려고합니다. 
+            맛있는 커피 계속 판매해주세요~ “
+          </p>
+
+          <div class="review_wrap">
+            <div class="top">
+              <p>cell****</p>
+              <p>[ 2025-09-21 ]</p>
+            </div>
+            <p>하우스 블렌드 커피 원두 구매</p>
+          </div>
+        </div> <!--card-->
+
+        <div class="card n4">
+          <div class="star_wrap">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+            <img src="../img/icon/star.png" alt="" width="24" height="24">
+          </div>
+          
+          <p>
+            " 회사에서 먹는 원두로 항상 구매합니다. 
+            여러 사람의 취향에 맞는 호불호 없는 원두여서 좋아요. "
+          </p>
+
+          <div class="review_wrap">
+            <div class="top">
+              <p>naiv****</p>
+              <p>[ 2025-07-13 ]</p>
+            </div>
+            <p>초콜릿 블렌드 커피 원두 구매</p>
+          </div>
+        </div> <!--card-->
+      </div> <!--review_list-->
+    </section>
+
+    <!--컨텐츠08-->
+    <section id="content08">
+      <p>@edawoncokr</p>
+
+      <div class="content_wrap">
+        <div class="img n1">
+          <a href="#"><div class="black"></div></a>
+        </div>
+        <div class="img n2">
+          <a href="#"><div class="black"></div></a>
+        </div>
+        <div class="img n3">
+          <a href="#"><div class="black"></div></a>
+        </div>
+        <div class="img n4">
+          <a href="#"><div class="black"></div></a>
+        </div>
+        <div class="img n5">
+          <a href="#"><div class="black"></div></a>
+        </div>
+        <div class="img n6">
+          <a href="#"><div class="black"></div></a>
+        </div>
+        <div class="img n7">
+          <a href="#"><div class="black"></div></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--퀵버튼-->
+  <aside id="quick_button">
+    <a href="#top" class="bt up"></a>
+    <div class="line"></div>
+    <a href="#footer" class="bt down"></a>
+  </aside>
+
+  <!--카테고리-->
+  <aside id="category_nav">
+    <ul>
+      <a href="#content01"><li>원두</li></a>
+      <a href="#content02"><li>차</li></a>
+      <a href="#content03"><li>세트상품</li></a>
+      <a href="#content04"><li>커피용품</li></a>
+      <a href="#content05"><li>특가할인</li></a>
+    </ul>
+  </aside>
+
+  <!--푸터 영역-->
+  <footer id="footer">
+    <div class="top">
+      <div class="left">
+        <a href="./edawon_index.html"><img src="../img/icon/symbol.png" alt="" width="124" height="99"></a>
+        <ul>
+          <li><a href="./edawon_sub04.html" target="_blank">회사소개</a></li>
+          <li><a href="#" target="_blank">이용약관</a></li>
+          <li><a href="#" target="_blank">개인정보처리방침</a></li>
+        </ul>
+      </div>
+
+      <div class="sns">
+        <a href="https://blog.naver.com/edawoncokr" target="_blank"><img src="../img/icon/nblog.png" alt="" width="107" height="43"></a>
+        <a href="https://www.instagram.com/edawoncokr/" target="_blank"><img src="../img/icon/instagram.png" alt="" width="40" height="40"></a>
+        <a href="https://youtube.com/@tv-gk7sj?si=TORfUEwujIfjdJpv" target="_blank"><img src="../img/icon/youtube.png" alt="" width="50" height="35"></a>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="bottom">
+      <div class="left">
+        상호명 이다원  대표자명 신현주<br>
+        주소 경기도 용인시 기흥구 구성로 279번길 21<br>
+        대표전화 031-266-0280  사업자등록번호 647-28-00292<br>
+        통신판매업신고번호 2017-용인기흥-0938  개인정보보호 책임자 신현주
+      </div>
+      <div class="middle">
+        고객센터<br>
+        <span>031-266-0280</span><br>
+        평일 오전 9시 ~ 오후 6시 / 토,일,공휴일 휴무<br>
+        KB국민 353901-01-255148  /  예금주 신현주(이다원)
+      </div>
+      <div class="right">
+        <p>
+          배송조회<br>
+          <span>1588-9988</span>
+        </p>
+        <a href="https://www.ilogen.com/web/personal/tkSearch" target="_blank">[ 로젠택배 배송조회 ]</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--스크립트 설정-->
+  <script>
+    // 제어할 요소들을 찾아 변수에 담습니다.
+    const topNotice = document.getElementById('top-notice');
+    const closeBtn = topNotice.querySelector('.close-btn');
+
+    // [단계 1] 페이지가 열리자마자 '닫은 기록'이 있는지 확인합니다.
+    // 'hideBanner'라는 이름의 데이터가 'true'라면 배너를 아예 보여주지 않습니다.
+    if (sessionStorage.getItem('hideBanner') === 'true') {
+      topNotice.style.display = 'none';
+    }
+
+    // [단계 2] 닫기 버튼을 클릭했을 때의 동작
+    closeBtn.addEventListener('click', () => {
+      // 화면에서 즉시 숨깁니다.
+      topNotice.style.display = 'none';
+      
+      // [단계 3] 브라우저 저장소에 "이 사용자는 배너를 닫았음"이라고 기록합니다.
+      // sessionStorage는 브라우저 탭을 닫기 전까지 유지됩니다.
+      sessionStorage.setItem('hideBanner', 'true');
+    });
+  </script>
+  
+
+</body>
+</html>

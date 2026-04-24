@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sign up</title>
+  <link rel="stylesheet" href="../css/signup.css">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+  <!--헤더 영역-->
+  <header>
+    <!--상단 회원가입 팝업 버튼-->
+    <div id="top-notice" class="promo-bar">
+      <p>회원가입 후 시그니처 원두를 10% 할인된 가격에 구입해보세요!</p>
+      <button class="close-btn"><img src="../img/icon/close.png" alt="" width="12.2" height="12.2"></button>
+    </div>
+
+    <!--로고 및 메뉴들-->
+    <nav>
+      <ul class="nav_left">
+        <li><a href="./edawon_sub01.html" data-hover="쇼핑">SHOP</a></li>
+        <li><a href="./edawon_sub02.html" data-hover="커스텀">CUSTOM</a></li>
+        <li><a href="./edawon_sub03.html" data-hover="도매">WHOLESALE</a></li>
+        <li><a href="./edawon_sub04.html" data-hover="회사소개">ABOUT</a></li>
+        <li><a href="./edawon_sub05.html" data-hover="커뮤니티">COMMUNITY</a></li>
+      </ul>
+
+      <a href="./edawon_index.html" class="logo"><img src="../img/icon/logo01.png" alt="" width="203" height="68"></a>
+
+      <ul class="nav_right">
+        <li class="ck_input">
+          <input type="checkbox" id="search_icon" class="hidden-check">
+          <input type="search" class="search_area" placeholder="검색">
+          <label for="search_icon"><img src="../img/icon/search.png" alt="" width="24" height="24"></label>
+        </li>
+        
+        <li><a href="./edawon_login.html">로그인</a></li>
+        <li><a href="./edawon_signup.html">회원가입</a></li>
+        <li><a href="#"><img src="../img/icon/shopping-basket.png" alt="" width="25" height="24.75"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--메인 영역-->
+  <section>
+    <form action="">
+      <p>회원가입</p>
+
+      <!--탭메뉴-->
+      <p class="title">회원구분</p>
+
+      <input type="radio" name="tabmenu" id="tab01" class="tab_input" checked>
+      <input type="radio" name="tabmenu" id="tab02" class="tab_input">
+
+      <div class="signup_filters">
+        <label for="tab01">개인회원</label>
+        <label for="tab02">사업자 회원</label>
+      </div>
+
+      <!--개인회원 회원가입 정보-->
+      <div class="teb signup_list_A">
+        <p class="title">기본정보</p>
+
+        <ul class="main">
+          <li class="category id">
+            <label for="" class="categoryTitle">아이디</label>
+            <input type="text">
+            <p>2~20자의 영문 소문자, 숫자와 특수문자( _ )만 사용할 수 있습니다</p>
+          </li>
+
+          <li class="category pw">
+            <label for="" class="categoryTitle">비밀번호</label>
+            <input type="password">
+            <p>4~20자의 영문 대소문자, 숫자와 특수문자를 사용할 수 있습니다</p>
+          </li>
+
+          <li class="category repw">
+            <label for="" class="categoryTitle">비밀번호 확인</label>
+            <input type="password">
+            <p>비밀번호를 한번 더 입력해 주세요</p>
+          </li>
+
+          <li class="category name">
+            <label for="" class="categoryTitle">이름</label>
+            <input type="text">
+            <p>한글 10자, 영문 20자 이내로 입력해 주세요</p>
+          </li>
+
+          <li class="category email">
+            <label for="" class="categoryTitle">이메일</label>
+            <input type="text">
+            <p>비밀번호 확인 용도로 사용이 됩니다</p>
+          </li>
+
+          <li class="category phone">
+            <label for="" class="categoryTitle">휴대전화</label>
+            <ul class="phone_num">
+              <li>
+                <select name="" id="">
+                  <option value="">010</option>
+                  <option value="">011</option>
+                  <option value="">0130</option>
+                  <option value="">016</option>
+                  <option value="">017</option>
+                  <option value="">018</option>
+                  <option value="">019</option>
+                  <option value="">02</option>
+                  <option value="">0303</option>
+                  <option value="">031</option>
+
+                  <option value="">032</option>
+                  <option value="">033</option>
+                  <option value="">041</option>
+                  <option value="">042</option>
+                  <option value="">043</option>
+                  <option value="">0502</option>
+                  <option value="">0504</option>
+                  <option value="">0505</option>
+                  <option value="">0506</option>
+                  <option value="">0507</option>
+
+                  <option value="">051</option>
+                  <option value="">052</option>
+                  <option value="">053</option>
+                  <option value="">054</option>
+                  <option value="">055</option>
+                  <option value="">061</option>
+                  <option value="">062</option>
+                  <option value="">063</option>
+                  <option value="">064</option>
+                  <option value="">070</option>
+
+                  <option value="">080</option>
+                  <option value="">1544</option>
+                  <option value="">1566</option>
+                  <option value="">1577</option>
+                  <option value="">1588</option>
+                  <option value="">1688</option>
+                </select>
+              </li>
+              <li>-</li>
+              <li><input type="text" maxlength="4"></li>
+              <li>-</li>
+              <li><input type="text" maxlength="4"></li>
+            </ul>
+            <p>취소/반품/교환 처리 용도로 사용이 됩니다</p>
+          </li>
+        </ul>
+
+        <p class="title">약관동의</p>
+
+        <ul class="checkbox_group">
+          <li>
+            <input type="checkbox" id="ck01">
+            <label for="ck01">모든 약관을 확인하고 전체 동의합니다.</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="ck02">
+            <label for="ck02">[필수] 이용약관 동의</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="ck03">
+            <label for="ck03">[필수] 개인정보처리방침 동의</label>
+          </li>
+
+          <li>
+            <ul class="choice">
+              <li>
+                <input type="checkbox" id="ck04">
+                <label for="ck04">[선택] SMS 수신</label>
+              </li>
+              <li>
+                <input type="checkbox" id="ck05">
+                <label for="ck05">[선택] 이메일 수신</label>
+              </li>
+            </ul> <!--choice-->
+          </li>
+        </ul> <!--checkbox_group-->
+
+        <button type="submit">회원가입</button>
+
+      </div> <!--signup_list_A-->
+      
+
+      <!--사업자 회원 회원가입 정보-->
+      <div class="teb signup_list_B">
+        <p class="title">기본정보</p>
+
+        <ul class="main">
+          <li class="category id">
+            <label for="" class="categoryTitle">아이디</label>
+            <input type="text">
+            <p>2~20자의 영문 소문자, 숫자와 특수문자( _ )만 사용할 수 있습니다</p>
+          </li>
+
+          <li class="category pw">
+            <label for="" class="categoryTitle">비밀번호</label>
+            <input type="password">
+            <p>4~20자의 영문 대소문자, 숫자와 특수문자를 사용할 수 있습니다</p>
+          </li>
+
+          <li class="category repw">
+            <label for="" class="categoryTitle">비밀번호 확인</label>
+            <input type="password">
+            <p>비밀번호를 한번 더 입력해 주세요</p>
+          </li>
+
+          <li class="category name">
+            <label for="" class="categoryTitle">이름</label>
+            <input type="text">
+            <p>한글 10자, 영문 20자 이내로 입력해 주세요</p>
+          </li>
+
+          <li class="category email">
+            <label for="" class="categoryTitle">이메일</label>
+            <input type="text">
+            <p>비밀번호 확인 용도로 사용이 됩니다</p>
+          </li>
+
+          <li class="category phone">
+            <label for="" class="categoryTitle">휴대전화</label>
+            <ul class="phone_num">
+              <li>
+                <select name="" id="">
+                  <option value="">010</option>
+                  <option value="">011</option>
+                  <option value="">0130</option>
+                  <option value="">016</option>
+                  <option value="">017</option>
+                  <option value="">018</option>
+                  <option value="">019</option>
+                  <option value="">02</option>
+                  <option value="">0303</option>
+                  <option value="">031</option>
+
+                  <option value="">032</option>
+                  <option value="">033</option>
+                  <option value="">041</option>
+                  <option value="">042</option>
+                  <option value="">043</option>
+                  <option value="">0502</option>
+                  <option value="">0504</option>
+                  <option value="">0505</option>
+                  <option value="">0506</option>
+                  <option value="">0507</option>
+
+                  <option value="">051</option>
+                  <option value="">052</option>
+                  <option value="">053</option>
+                  <option value="">054</option>
+                  <option value="">055</option>
+                  <option value="">061</option>
+                  <option value="">062</option>
+                  <option value="">063</option>
+                  <option value="">064</option>
+                  <option value="">070</option>
+
+                  <option value="">080</option>
+                  <option value="">1544</option>
+                  <option value="">1566</option>
+                  <option value="">1577</option>
+                  <option value="">1588</option>
+                  <option value="">1688</option>
+                </select>
+              </li>
+              <li>-</li>
+              <li><input type="text" maxlength="4"></li>
+              <li>-</li>
+              <li><input type="text" maxlength="4"></li>
+            </ul>
+            <p>취소/반품/교환 처리 용도로 사용이 됩니다</p>
+          </li>
+        </ul>
+
+        <p class="title">사업자 정보</p>
+        <div class="business">
+          <p>사업자등록증 이미지</p>
+          <div class="add_file">
+            <input type="file">
+            <p>
+              * JPG, GIF, PNG 형식의 파일을 업로드 해 주세요<br>
+              * 사업자회원 승인 및 혜택 부여는 회원정보 페이지에서 확인 가능하며 영업일 기준 1~2일이 소요됩니다.<br>
+              &nbsp;&nbsp;&nbsp;그 이전에는 개인회원 자격으로 구매가 가능합니다.
+            </p>
+          </div>
+        </div>
+
+        <p class="title">약관동의</p>
+
+        <ul class="checkbox_group">
+          <li>
+            <input type="checkbox" id="ck06">
+            <label for="ck06">모든 약관을 확인하고 전체 동의합니다.</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="ck07">
+            <label for="ck07">[필수] 이용약관 동의</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="ck08">
+            <label for="ck08">[필수] 개인정보처리방침 동의</label>
+          </li>
+
+          <li>
+            <ul class="choice">
+              <li>
+                <input type="checkbox" id="ck09">
+                <label for="ck09">[선택] SMS 수신</label>
+              </li>
+              <li>
+                <input type="checkbox" id="ck10">
+                <label for="ck10">[선택] 이메일 수신</label>
+              </li>
+            </ul> <!--choice-->
+          </li>
+        </ul> <!--checkbox_group-->
+
+        <button type="submit">회원가입</button>
+
+      </div> <!--signup_list_B-->
+    </form>
+  </section>
+
+  <!--퀵버튼-->
+  <aside>
+    <a href="#top" class="bt up"></a>
+    <div class="line"></div>
+    <a href="#footer" class="bt down"></a>
+  </aside>
+
+  <!--푸터 영역-->
+  <footer id="footer">
+    <div class="top">
+      <div class="left">
+        <a href="./edawon_index.html"><img src="../img/icon/symbol.png" alt="" width="124" height="99"></a>
+        <ul>
+          <li><a href="./edawon_sub04.html" target="_blank">회사소개</a></li>
+          <li><a href="#" target="_blank">이용약관</a></li>
+          <li><a href="#" target="_blank">개인정보처리방침</a></li>
+        </ul>
+      </div>
+
+      <div class="sns">
+        <a href="https://blog.naver.com/edawoncokr" target="_blank"><img src="../img/icon/nblog.png" alt="" width="107" height="43"></a>
+        <a href="https://www.instagram.com/edawoncokr/" target="_blank"><img src="../img/icon/instagram.png" alt="" width="40" height="40"></a>
+        <a href="https://youtube.com/@tv-gk7sj?si=TORfUEwujIfjdJpv" target="_blank"><img src="../img/icon/youtube.png" alt="" width="50" height="35"></a>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="bottom">
+      <div class="left">
+        상호명 이다원  대표자명 신현주<br>
+        주소 경기도 용인시 기흥구 구성로 279번길 21<br>
+        대표전화 031-266-0280  사업자등록번호 647-28-00292<br>
+        통신판매업신고번호 2017-용인기흥-0938  개인정보보호 책임자 신현주
+      </div>
+      <div class="middle">
+        고객센터<br>
+        <span>031-266-0280</span><br>
+        평일 오전 9시 ~ 오후 6시 / 토,일,공휴일 휴무<br>
+        KB국민 353901-01-255148  /  예금주 신현주(이다원)
+      </div>
+      <div class="right">
+        <p>
+          배송조회<br>
+          <span>1588-9988</span>
+        </p>
+        <a href="https://www.ilogen.com/web/personal/tkSearch" target="_blank">[ 로젠택배 배송조회 ]</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--스크립트 설정-->
+  <script>
+    // 제어할 요소들을 찾아 변수에 담습니다.
+    const topNotice = document.getElementById('top-notice');
+    const closeBtn = topNotice.querySelector('.close-btn');
+
+    // [단계 1] 페이지가 열리자마자 '닫은 기록'이 있는지 확인합니다.
+    // 'hideBanner'라는 이름의 데이터가 'true'라면 배너를 아예 보여주지 않습니다.
+    if (sessionStorage.getItem('hideBanner') === 'true') {
+      topNotice.style.display = 'none';
+    }
+
+    // [단계 2] 닫기 버튼을 클릭했을 때의 동작
+    closeBtn.addEventListener('click', () => {
+      // 화면에서 즉시 숨깁니다.
+      topNotice.style.display = 'none';
+      
+      // [단계 3] 브라우저 저장소에 "이 사용자는 배너를 닫았음"이라고 기록합니다.
+      // sessionStorage는 브라우저 탭을 닫기 전까지 유지됩니다.
+      sessionStorage.setItem('hideBanner', 'true');
+    });
+  </script>
+
+</body>
+</html>

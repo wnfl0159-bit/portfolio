@@ -1,0 +1,818 @@
+
+@charset "UTF-8";
+
+/* 나눔스퀘어 폰트 굵기별 스타일
+font-family: 'NanumSquareLight';
+font-family: 'NanumSquare';
+font-family: 'NanumSquareBold';
+font-family: 'NanumSquareExtraBold';
+font-family: 'NanumSquareAcb';
+font-family: 'NanumSquareAceb';
+font-family: 'NanumSquareAcl';
+font-family: 'NanumSquareAcr';
+*/
+
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ol, li {
+  list-style: none;
+}
+
+/*헤더 영역*/
+header {
+  width: 100%;
+  height: 88px;
+  background-color: #fff;
+  padding: 15px 70px 10px 70px;
+  position: sticky; /*영역 공간 차지하면서 위치 고정*/
+  top: 0;
+  left: 0;
+  z-index: 1000; /* 이 숫자가 클수록 다른 요소보다 화면 앞쪽(위)에 위치하게 됩니다. */
+  box-shadow: 5px 0 5px #ccc;
+}
+header>a {
+  width: 177px;
+  height: 63px;
+  margin-right: 47px;
+  /*background-color: aqua;*/
+  float: left;
+  background-image: url(../img/etc/header_logo.png);
+  background-size: contain;
+  background-position: center;
+  font-size: 0px;
+}
+/*메인메뉴 네비*/
+header .mainMenu_n1 {
+  width: 281px;
+  height: 63px;
+  line-height: 63px;
+  /*background-color: lightgreen;*/
+  display: inline-block;
+}
+header .mainMenu_n1 ul {
+  width: 281px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+}
+header .mainMenu_n1 ul li {
+  font-size: 15px;
+  font-family: 'NanumSquareBold';
+  /*background-color: lightsalmon;*/
+  float: left;
+  margin-top: 5px;
+}
+
+/*로그인&회원가입*/
+header .mainMenu_n2{
+  width: 183px;
+  height: 63px;
+  line-height: 63px;
+  /*background-color: lightgreen;*/
+  display: inline-block;
+  float: right;
+}
+header .mainMenu_n2 ul {
+  width: 183px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+}
+header .mainMenu_n2 ul li {
+  font-size: 15px;
+  font-family: 'NanumSquareBold';
+  /*background-color: lightsalmon;*/
+  float: left;  
+  margin-top: 5px;
+}
+header .mainMenu_n2 ul li:nth-of-type(3) img {
+  margin-top: 20px;
+}
+
+/* 메인 영역 섹션 가로 정렬 */
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0 70px;
+  align-items: flex-start;
+}
+
+/* 좌측 영역 */
+#main {
+  flex: 0 0 calc(1309 / 1920 * 100%);
+  /*width: 1309px;*/
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+}
+
+/* 제품 이미지 */
+#main .pic_area {
+  width: 100%;
+  flex-direction: column;
+}
+
+#main #prod-pic {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#main #big {
+  flex: 0 0 calc(923 / 1239 * 100%);
+  object-fit: cover;
+}
+
+#main #small-pic {
+  flex: 0 0 calc(316 / 1239 * 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 50px 50px 0 50px;
+  /*background-color: lightblue;*/
+}
+
+#main .small {
+  width: 100%;
+  height: 216px;
+  object-fit: cover;
+}
+
+#small-pic img:hover {
+  cursor: pointer;
+}
+
+/* 아코디언 영역 */
+#information {
+  width: 923px;
+  display: flex;
+  flex-direction: column;
+  /*background-color: lightblue;*/
+  float: right;
+}
+
+.faq_item {
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+
+/* 질문 영역 */
+.faq_question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq_question p {
+  width: 100%;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  letter-spacing: 1%;
+}
+
+/* + / - 아이콘 스타일 */
+.faq_question .icon {
+  width: 25px;
+  height: 25px;
+  background-image: url('../img/icon/add.png'); /* 기본 플러스 이미지 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* 질문이 클릭되어 .active 클래스가 추가되었을 때 */
+.faq_item.active .faq_question .icon {
+  background-image: url('../img/icon/Minus.png'); /* 마이너스 이미지로 교체 */
+}
+
+/* 답변 영역 (초기 상태: 숨김) */
+.faq_answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease; /* 부드럽게 펼쳐지는 효과 */
+  background-color: #fafafa;
+}
+
+/* 답변 영역 텍스트 스타일 */
+.answer_content {
+  padding: 20px;
+  font-family: 'NanumSquareBold';
+  font-size: 14px;
+  line-height: 180%;
+  color: #404040;
+}
+
+/* 활성화 상태 (Active) */
+.faq_item.active .faq_answer {
+  max-height: 2000px; /* 답변 내용보다 충분히 큰 값 */
+}
+
+.faq_item:hover {
+  color: #123264;
+}
+
+/* 배송 및 문의 세부 스타일 */
+.answer_content .text .title {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  gap: 15px;
+  align-items: center;
+}
+
+/* 배송조회 버튼 */
+.answer_content .text .title a {
+  padding: 2px 10px;
+  border: 1px solid #ccc;
+}
+
+.answer_content .n1>ul {
+  margin: 30px 0;
+}
+.answer_content .n1 ul>li>ul {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+/* 일부 텍스트 볼드 처리 */
+.answer_content .bold {
+  font-family: 'NanumSquareExtraBold';
+}
+
+.answer_content .text>p {
+  font-family: 'NanumSquare';
+  color: #000000;
+  margin-top: 15px;
+}
+
+.answer_content .n2 .title {
+  margin: 100px 0 30px;
+}
+
+/* 스크롤 이동 버튼 */
+#bt {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 50px 5px 10px;
+}
+
+#bt a {
+  flex: 1;
+  border: 1px solid #ccc;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  letter-spacing: 1%;
+  text-align: center;
+  padding: 15px 0;
+}
+
+#bt a:hover {
+  box-shadow: 0 2px 2px #cccccc46;
+}
+
+/* 상세내용 */
+#detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#detail .top {
+  width: 100%;
+  height: 795px;
+  display: flex;
+  flex-direction: row;
+}
+
+#detail .image01 {
+  flex: 1;
+  height: 100%;
+  background-color: lightcoral;
+  background-size: cover;
+  background-position: center;
+}
+
+#detail .top .n1 { background-image: url(../img/detail/texture04.jpg);}
+#detail .top .n2 { background-image: url(../img/detail/texture02.jpg);}
+#detail .top .n3 { background-image: url(../img/detail/texture03.jpg);}
+
+#detail .image02 {
+  width: 100%;
+  height: 312px;
+  background-image: url(../img/detail/dearScent_texture.png);
+  background-size: cover;
+  background-position: center;
+}
+
+#detail .image03 {
+  width: 100%;
+  height: 800px;
+  background-image: url(../img/detail/set_img.png);
+  background-size: cover;
+  background-position: center;
+}
+
+/* 리뷰 */
+#review {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#review>p {
+  font-family: 'Playfair Display';
+  font-weight: bold; 
+  font-size: 36px;
+  letter-spacing: 1%;
+  padding: 30px 0 10px;
+  border-bottom: 3px solid #ccc;
+}
+
+#review .review_con_top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 54px;
+  padding: 31px 0;
+  margin-bottom: 63px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review_con_top .grade_star {
+  flex: 0 0 calc(495 / 1239 * 100%);
+  /*width: 495px;*/
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /*background-color: lightblue;*/
+}
+
+.grade_star .wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  /*background-color: lightcoral;*/
+}
+
+.grade_star .wrap img {
+  object-fit: cover;
+  padding: 3px;
+}
+
+.grade_star .wrap p {
+  height: 73px;
+  line-height: 73px;
+  font-family: 'NanumSquareExtraBold';
+  font-size: 64px;
+  letter-spacing: 1%;
+}
+
+.grade_star>p {
+  padding: 10px;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  letter-spacing: 1%;
+  margin: 10px 0 25px;
+}
+
+.grade_star>a {
+  padding: 20px 70px;
+  border-radius: 10px;
+  background-color: #123264;
+  color: #fff;
+  font-family: 'NanumSquareExtraBold';
+  font-size: 16px;
+  letter-spacing: 1%;
+}
+
+.review_con_top .line {
+  height: 239px;
+  width: 2px;
+  background-color: #ccc;
+}
+
+.review_con_top .grade {
+  flex: 0 0 calc(634 / 1239 * 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 60px;
+}
+
+.review_con_top .grade .type {
+  display: flex;
+  flex-direction: row;
+  gap: 34px;
+  align-items: center;
+  /*background-color: lightblue;*/
+}
+
+.review_con_top .grade .type p {
+  flex: 1;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  letter-spacing: 1%;
+}
+
+.review_con_top .grade .type .stick {
+  flex: 0 0 calc(462 / 574 * 100%);
+  /*width: 462px;*/
+  height: 11px;
+  background-color: #D9D9D9;
+  border-radius: 100px;
+  position: relative;
+}
+
+.review_con_top .grade .type .color_stick {
+  height: 11px;
+  background-color: #123264;
+  border-radius: 100px;
+  position: absolute;
+  left: 0;
+}
+
+/* 타입별 그래프 수치 */
+.review_con_top .grade .no1 .color_stick { width: 80%; }
+.review_con_top .grade .no2 .color_stick { width: 40%; }
+.review_con_top .grade .no3 .color_stick { width: 13%; }
+.review_con_top .grade .no4 .color_stick { width: 1%; }
+.review_con_top .grade .no5 .color_stick { width: 2%; }
+
+/* 최신순/별점순 버튼 */
+.review_con_buttem .radio_group {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review_con_buttem .radio_group input {
+  display: none;
+}
+
+.review_con_buttem .radio_group label {
+  padding: 10px 20px;
+  border: 1px solid #123264;
+  background-color: #FFFFFF; /* 기본: 흰 바탕 */
+  color: #000000;            /* 기본: 검정 글씨 */
+  font-family: 'NanumSquareExtraBold';
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease; /* 색상 변경 시 부드러운 효과 */
+}
+
+.review_con_buttem .radio_group input:checked + label {
+  background-color: #123264; /* 활성: 검정 바탕 */
+  color: #FFFFFF;            /* 활성: 흰 글씨 */
+}
+
+/* 리뷰 리스트 */
+.review_con_buttem .list_group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.review_con_buttem .list {
+  padding: 30px 0 30px 30px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.review_con_buttem .list .left {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.review_con_buttem .list .star {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 22px;
+}
+
+.review_con_buttem .list .star img {
+  object-fit: cover;
+}
+
+.review_con_buttem .list .left p {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1%;
+  /*background-color: lightcoral;*/
+}
+
+.review_con_buttem .list_group .line {
+  width: 1px;
+  height: auto;
+  background-color: #ccc;
+}
+
+.review_con_buttem .list .right {
+  flex: 0 0 calc(336 / 1239 * 100%);
+}
+
+.review_con_buttem .list .right p {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-family: 'NanumSquareBold';
+  font-size: 14px;
+  letter-spacing: 1%;
+  /*background-color: lightsalmon;*/
+}
+
+/* 우측 영역 */
+#choice {
+  flex: 0 0 calc(611 / 1920 * 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0 0 70px;
+  position: sticky;
+  top: 88px; /* 고정되었을 때 헤더와의 간격 */
+  margin-bottom: 300px;
+}
+
+#choice .title p:nth-of-type(1) {
+  font-family: 'Playfair Display';
+  font-weight: 600; 
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+#choice .title p:nth-of-type(2) {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1%;
+  margin-bottom: 40px;
+}
+#choice .title p:nth-of-type(3) {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  line-height: 150%;
+  color: #404040;
+  margin-bottom: 40px;
+}
+#choice .title p:nth-of-type(4) {
+  font-family: 'NanumSquareBold';
+  font-size: 20px;
+  letter-spacing: 1%;
+  margin-bottom: 65px;
+}
+
+#choice .input_area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+#choice .input_area label {
+  flex: 0 0 calc(59 / 471 * 100% );
+  /*width: 59px;*/
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  letter-spacing: 1%;
+  text-align: center;
+}
+
+#choice .input_area select {
+  /* 1. 브라우저 기본 화살표 숨기기 */
+  appearance: none;
+  -webkit-appearance: none; /* 사파리/크롬 지원 */
+  -moz-appearance: none;    /* 파이어폭스 지원 */
+  
+  /* 2. 하단 라인 및 텍스트 스타일 */
+  width: 100%;
+  height: 38px;
+  padding: 8px 20px;
+  font-family: 'NanumSquareBold';
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+
+  /* 3. 새로운 화살표(▼) 넣기 (SVG 활용) */
+  background-image: url(../img/icon/tabler_caret-down-filled.png);
+  background-repeat: no-repeat;
+  background-position: right 20px center; /* 우측 끝에서 5px 떨어진 중앙 */
+}
+
+/* IE에서 기본 화살표가 다시 나타나는 것 방지 */
+#category07 .Inquiry .n1 select::-ms-expand {
+  display: none;
+}
+/*
+#choice .input_area select option:nth-of-type(1),
+#choice .input_area select option:nth-of-type(2) {
+  background-color: #ccc;
+}
+*/
+
+#choice .buy {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-left: 15px;
+  /*background-color: lightblue;*/
+}
+
+/* 찜 아이콘 */
+/* 1. 실제 체크박스는 화면에서 숨깁니다 */
+.heart-input {
+  display: none;
+}
+
+/* 2. 라벨을 하트 아이콘으로 디자인합니다 */
+.heart-wrapper {
+  flex: 0 0 calc(36 / 471 * 100%);
+  height: 33px;
+}
+
+.heart-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/icon/heartOff.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* 클릭 시 살짝 커지는 효과용 */
+}
+
+/* 3. 체크박스가 선택(checked)되었을 때, 바로 뒤(+)에 있는 라벨의 이미지를 변경 */
+.heart-input:checked + .heart-label {
+  background-image: url(../img/icon/heartOn.png);
+}
+
+/* 4. (선택사항) 클릭했을 때 살짝 커지는 효과로 생동감 주기 */
+.heart-label:active {
+  transform: scale(1.2);
+}
+
+#choice .buy a {
+  flex: 1;
+  height: 58px;
+  line-height: 58px;
+  text-align: center;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  letter-spacing: 1%;
+  border: 1px solid #123264;
+}
+
+#choice .buy a:nth-of-type(2) {
+  background-color: #123264;
+  color: #fff;
+}
+
+/*푸터 영역*/
+footer {
+  width: 100%;
+  height: 377px;
+  /*padding: 70px;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #123264;
+  color: #fff;
+  padding: 70px;
+  align-items: flex-end;
+}
+/*좌측*/
+footer .left {
+  flex: 1;
+  /*width: 606px;*/
+  height: 237px;
+  /*background-color: lightblue;*/
+}
+footer .left a img {
+  width: 245px;
+  height: 67px;
+  margin-bottom: 5px;
+}
+footer .left p:nth-of-type(1) {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  margin-bottom: 45px;
+}
+footer .left ul {
+  margin-bottom: 15px;
+}
+footer .left li {
+  display: inline-block;
+  font-family: 'NanumSquareBold';
+  font-size: 15px;
+}
+footer .left P:nth-of-type(2) {
+  height: 60px;
+  font-family: 'NanumSquareBold';
+  font-size: 13px;
+  line-height: 150%;
+  /*background-color: lightcoral;*/
+}
+
+
+/*우측*/
+footer .right {
+  flex: 1;
+  /*width: 275px;*/
+  height: 214px;
+  display: flex;
+  flex-direction: column;   /* 요소를 위에서 아래로 쌓음 */
+  align-items: flex-end;    /* 모든 자식 요소를 오른쪽 끝으로 밀어냄 */
+  text-align: right;        /* 텍스트 내용 자체도 오른쪽 정렬 */
+  /*background-color: lightblue;*/
+}
+footer .right .icon {
+  /*width: 100%;*/
+  height: 36px;           /* 부모 높이 고정 */
+  display: flex;          /* 가로 나열 */
+  align-items: center;    /* 수직 중앙 정렬 */
+  justify-content: flex-end; /* 우측 끝으로 정렬 */
+  gap: 18px;               /* 이미지 사이 간격 (선택사항) */
+  /*background-color: lightcoral;*/
+  margin-bottom: 20px;
+}
+footer .right .img {
+  height: auto;           /* 이미지 비율 유지 */
+  max-height: 100%;       /* 부모 높이를 넘지 않게 설정 */
+}
+footer .right p:nth-of-type(1) {
+  height: 36px;
+  font-family: 'NanumSquareBold';
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+footer .right p:nth-of-type(2) {
+
+  height: 24px;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  margin-bottom: 10px;
+  /*background-color: lightcoral;*/
+}
+footer .right p:nth-of-type(3) {
+  height: 48px;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  text-align: center;
+  line-height: 150%;
+  /*background-color: lightcoral;*/
+}
+
+/*페이지 상단 이동 퀵메뉴*/
+.quick_menu {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #123264;
+  padding: 7px 10px;
+}
+.quick_menu img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+  /*ackground-color: lightcoral;*/
+}
+html {
+  scroll-behavior: smooth; /* 스크롤 이동 부드럽게 */
+}

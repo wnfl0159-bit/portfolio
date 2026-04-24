@@ -1,0 +1,529 @@
+@charset "UTF-8";
+
+/* 나눔 스퀘어 굵기별 폰트명
+font-family: 'NanumSquareAcl';
+font-family: 'NanumSquareAcr';
+font-family: 'NanumSquareAcb';
+font-family: 'NanumSquareAceb';
+*/
+
+/* Playfair Display 굵기별 수치
+font-weight: 400;  Regular
+font-weight: 500;  Medium
+font-weight: 600;  SemiBold
+font-weight: 700;  Bold
+font-weight: 800;  ExtraBold
+font-weight: 900;  Black
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'NanumSquareAcb';
+}
+
+body {
+  background-color: #FAFAF9;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+html {
+  scroll-behavior: smooth; /* 스크롤 이동 부드럽게 */
+}
+
+/* 헤더 영역 */
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 상단 띠 배너 */
+#top-notice {
+  width: 100%;
+  height: 41px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 50px 12px 62.2px;
+  background-color: #003811;
+}
+
+#top-notice p {
+  width: 100%;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  /*background-color: lightblue;*/
+}
+
+.close-btn {
+  border: none;
+  background-color: #003811;
+  cursor: pointer;
+}
+
+#top-notice img {
+  display: block;
+}
+
+/* 헤더 내 네비 */
+nav {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 280px;    /* w 29px */
+  background-color: #FAFAF9;
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+  /*background-color: lightblue;*/
+}
+
+/* 좌우에 고정 */
+nav .nav_left { justify-content: left; }
+nav .nav_right { justify-content: right; }
+
+nav ul li {
+  font-size: 15px;
+}
+
+nav .nav_left li a {
+  position: relative;
+  display: inline-block;
+  /*background-color: lightgreen;*/
+  /*transition: all 0.3s;*/
+}
+
+.nav_left li a:hover {
+  color: transparent; /* 기존 'SHOP' 글자를 투명하게 숨김 */
+}
+
+.nav_left li a::after {
+  content: attr(data-hover); /* HTML의 data-hover 값을 가져옴 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* 평소에는 안 보이게 */
+  /*transition: all 0.3s;*/
+  white-space: nowrap;
+}
+
+.nav_left li a:hover::after {
+  opacity: 1; /* 호버 시 '쇼핑' 등장 */
+  color: #003811; /* 포인트 컬러 */
+}
+
+/* 검색창 영역 */
+nav .nav_right .ck_input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* 체크박스 숨기기 */
+nav .ck_input .hidden-check {
+  display: none;
+}
+
+/* 입력창 초기 상태 (숨김) */
+nav .ck_input .search_area {
+  border: none;
+  background-color: rgba(225, 225, 225, 0.5);
+  border-radius: 100px;
+  
+  /* 숨김 설정 */
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  
+  /* 펼쳐질 때 효과 */
+  transition: all 0.3s ease-in-out; 
+  outline: none; /* 입력창 클릭 시 생기는 까만 테두리 제거 */
+}
+
+/* 체크박스가 선택되었을 때 펼침 상태 */
+.hidden-check:checked + .search_area {
+  max-width: 200px; /* 입력창 넓이에 맞춰 조절 */
+  opacity: 1;
+  padding: 0 10px;
+}
+
+/* 메인 영역 */
+form {
+  width: 920px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+/* 타이틀 */
+form>p:nth-of-type(1) {
+  flex: 1;
+  font-size: 35px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+/* 라디오 버튼(input) 숨기기 */
+.tab_input {
+  display: none;
+}
+
+.title {
+  width: 100%;
+  font-size: 16px;
+  padding: 0 0 10px 5px;
+  border-bottom: 1px solid #555;
+}
+
+/* 탭메뉴 */
+.signup_filters {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 15px;
+  padding: 15px 0 15px 5px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 70px;
+  /*background-color: lightblue;*/
+}
+
+.signup_filters label {
+  padding: 7px 15px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #555;
+}
+
+#tab01:checked ~ .signup_filters label[for="tab01"],
+#tab02:checked ~ .signup_filters label[for="tab02"] {
+  color: #fff;
+  background-color: #555;
+}
+
+/*탭메뉴 동작*/
+#tab01:checked ~ .signup_list_A,
+#tab02:checked ~ .signup_list_B {
+  display: flex; /* gap 유지를 위해 block 이 아닌 flex 사용 */
+
+  /* 나타날 때 fadeUp 애니메이션을 0.4초 동안 부드럽게 실행 */
+  animation: fadeUp 0.4s ease-in-out forwards;
+}
+
+/* 개인회원, 사업자 회원 */
+.signup_list_A,
+.signup_list_B {
+  display: none;  /* 기본적으로 안 보이게 처리 */
+  width: 100%;
+  height: 1050px;
+  flex-direction: column;
+}
+
+/* 배경색 확인용 
+.signup_list_A { background-color: lightblue; }
+.signup_list_B { background-color: lightcoral; }
+*/
+
+/* 전반적인 행열 정렬 설정 */
+.teb ul li,
+.phone_num,
+.choice,
+.business {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 각 항목별 외형 디자인 */
+.teb .main>li {
+  height: 60px;
+  padding-left: 10px;
+  border-bottom: 1px solid #ccc;
+  /*background-color: lightgoldenrodyellow;*/
+}
+
+.categoryTitle {
+  flex: 0 0 calc(100 / 910 * 100%);
+  margin-right: 50px;
+  font-size: 15px;
+  color: #555;
+}
+
+.category input {
+  flex: 0 0 calc(220 / 910 * 100%);
+  height: 31px;
+  border: none;
+  padding-left: 10px;
+  /*outline: none;  입력창 클릭 시 생기는 까만 테두리 제거 */
+  font-size: 15px;
+}
+
+.phone_num input,
+.phone_num select {
+  width: 88.67px;
+  height: 31px;
+  border: none;
+  margin: 0;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.phone_num {
+  gap: 10px;
+}
+
+.category p {
+  margin-left: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.teb .main {
+  margin-bottom: 70px;
+}
+
+/* 약관동의 */
+.checkbox_group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0 0 5px;
+  margin-bottom: 70px;
+}
+
+.checkbox_group li {
+  gap: 10px;
+}
+
+.checkbox_group label {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.checkbox_group .choice {
+  gap: 20px;
+}
+
+/* 사업자 정보 */
+.business {
+  gap: 30px;
+  padding: 20px 0 20px 5px;
+  /*background-color: lightsalmon;*/
+  margin-bottom: 70px;
+}
+
+.business>p {
+  flex: 0 0 calc(120 / 915 * 100%);
+  height: 100px;
+  font-size: 15px;
+  color: #555;
+}
+
+.add_file {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add_file p {
+  font-size: 14px;
+  color: #555;
+  line-height: 20px;
+}
+
+.add_file input[type=file] {
+  /*padding: 7px 15px;
+  border: 1px solid #555;
+  border-radius: 5px;*/
+  font-size: 15px;
+  color: blue;
+}
+
+/* 회원가입 버튼 */
+.signup_list_A>button,
+.signup_list_B>button {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #F3F1ED;
+  border: 1px solid #555;
+  border-radius: 10px;
+  color: #555;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 회원가입 버튼 호버 시 바탕색 변경 */
+.signup_list_A>button:hover,
+.signup_list_B>button:hover {
+  background-color: #AFAEAB;
+}
+
+/* 퀵버튼 */
+aside {
+  position: absolute;
+  width: 50px;
+  height: 96px;
+  background-color: #fff;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border-radius: 10px;
+  border: 0.5px solid #C5C5C5;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  top: 82%;
+  right: 3%;
+  position: fixed;
+}
+
+aside .bt {
+  width: 100%;
+  height: 40px;
+  /*background-color: lightblue;*/
+  background-size: cover;
+  background-position: center;
+}
+
+aside .up { background-image: url(../img/icon/up_b.png); }
+aside .down { background-image: url(../img/icon/down_b.png); }
+
+/* 버튼 호버 시 색상 변경 */
+aside .up:hover { background-image: url(../img/icon/up_g.png); transition: 0.1s ease; }
+aside .down:hover { background-image: url(../img/icon/down_g.png); transition: 0.1s ease; }
+
+/* 구분선 */
+aside .line {
+  width: 20px;
+  height: 1px;
+  background-color: #9E9E9E;
+}
+
+/* 푸터 영역 */
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 70px 100px;
+  background-color: #222;
+  z-index: 1;
+}
+
+/* 푸터 상단 */
+footer .top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+/* 상단 좌측 영역 */
+footer .top .left {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+footer .top .left ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* 소셜 영역 */
+footer .top .sns {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-end;
+}
+
+/* 푸터 구분선 */
+footer .line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+
+/* 푸터 하단 */
+footer .bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+footer .bottom>div {
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 2%;
+  color: #ccc;
+}
+
+footer .bottom span {
+  font-size: 20px;
+}
+
+footer .bottom .right a {
+  color: #1481FF;
+}
+
+
+
+
+/*애니메이션 효과*/
+
+/* 탭 부드러운 등장 애니메이션 */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* 아래에서 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 */
+  }
+}

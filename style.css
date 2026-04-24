@@ -1,0 +1,456 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'KblJumpCondensed';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-5@1.0/KBLJump_EB_CondensedTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@import url('https://fonts.cdnfonts.com/css/hey-august');
+/*
+font-family: 'Hey August', sans-serif;
+*/
+
+/* 나눔 스퀘어 굵기별 폰트명
+font-family: 'NanumSquareAcl';
+font-family: 'NanumSquareAcr';
+font-family: 'NanumSquareAcb';
+font-family: 'NanumSquareAceb';
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'NanumSquareAcr';
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth; /* 스크롤 이동 부드럽게 */
+}
+
+header {
+  width: 100%;
+  height: 106px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /*padding: 0 150px; *** */
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 9999;
+}
+
+header nav ul{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  /*background-color: lightblue;*/
+}
+
+header nav ul li {
+  font-family: 'NanumSquareAceb';
+  font-size: 22px;
+}
+
+
+/* 메인 영역 */
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 인트로 */
+#intro {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 70px;
+  padding-right: 50px;
+  align-items: flex-end;
+}
+
+#intro .text {
+  display: flex;
+  flex-direction: column;
+}
+
+#intro .text.left p {
+  font-family: 'Hey August';
+  /*font-size: 200px;****/
+  font-size: 10vw;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+#intro .text.right {
+  gap: 100px;
+  margin-bottom: 10px;
+}
+
+#intro .text.right p:nth-of-type(1) {
+  font-family: 'KblJumpCondensed';
+  font-size: 70px;
+  color: #0F147A;
+  text-align: right;
+}
+
+#intro .text.right p:nth-of-type(2) {
+  font-family: 'KblJumpCondensed';
+  font-display: swap;
+  font-size: 100px;
+}
+
+
+/* 스크롤 */
+#scroll {
+  margin-top: 200px;
+  margin-bottom: 150px;
+}
+
+
+/* About Me */
+#aboutMe {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 84px;
+  justify-content: center;
+  /*background-color: lightblue;*/
+  padding-top: 150px;
+}
+
+#aboutMe .img_group {
+  width: 436px;;
+  height: 570px;
+  /*background-color: lightcoral;*/
+  position: relative;
+}
+
+/* 이미지 설정 */
+#aboutMe .back_img {
+  width: 419px;
+  height: 514px;
+  border-radius: 95px 0 95px 0;
+  background-color: #6F727A;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#aboutMe .top_img {
+  width: 387px;
+  height: 519px;
+  background-image: url(./img/photo.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 95px 0 95px 0;
+  outline: 2px solid #ccc;
+  outline-offset: 10px;
+  margin: 10px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* 텍스트 설정 */
+.title {
+  font-family: 'KblJumpCondensed';
+  font-size: 60px;
+  color: #0F147A;
+  background-color: #fff;
+}
+
+#aboutMe .text_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+#aboutMe .text_group p:nth-of-type(2) {
+  font-size: 35px;
+  line-height: 150%;
+  margin-top: 76px;
+}
+
+#aboutMe .text_group p:nth-of-type(3),
+#aboutMe .text_group p:nth-of-type(4) {
+  font-size: 25px;
+  line-height: 150%;
+  margin-top: 76px;
+  margin-top: 66px;
+}
+
+#aboutMe .text_group p span {
+  font-family: 'NanumSquareAcb';
+}
+
+
+/* 프로필 */
+#profile {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 151px;
+  padding: 100px 70px 60px;
+  margin: 150px 0;
+  border: 1px solid #000;
+  border-radius: 20px;
+}
+
+#profile .title {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 30px;
+}
+
+/* 프로필 좌측 */
+#profile .n1 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /*background-color: lightblue;*/
+}
+
+#profile .n1 li{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#profile .bold {
+  font-family: 'KblJumpCondensed';
+  font-size: 20px;
+}
+
+#profile .n1 li p:nth-of-type(1) {
+  width: calc(71 / 272 * 100%);
+  /*background-color: lightcoral;*/
+}
+
+#profile .n1 .keyword {
+  margin-top: 56px;
+  gap: 30px;
+  /*background-color: lightcyan;*/
+}
+
+#profile .n1 .keyword .bold {
+  width: fit-content;
+}
+
+/* 프로필 중앙 */
+#profile .n2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*background-color: lightblue;*/
+}
+
+#profile .n2 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#profile .n2 ul li:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /*background-color: lightcoral;*/
+}
+
+
+/* 프로필 우측 */
+#profile .n3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*background-color: lightblue;*/
+}
+
+#profile .n3 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#profile .n3 ul:nth-of-type(1) li:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /*background-color: lightcoral;*/
+}
+
+#profile .n3 ul:nth-of-type(2) li:nth-of-type(2) {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /*background-color: lightgoldenrodyellow;*/
+}
+
+
+/* 포트폴리오 */
+#portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px 0 300px;
+  /*background-color: lightblue;*/
+}
+
+#portfolio .n1 {
+  display: flex;
+  flex-direction: row;
+  gap: 122px;
+  /*background-color: lightgoldenrodyellow;*/
+  margin-top: 200px;
+}
+
+
+#portfolio .n2 {
+  display: flex;
+  flex-direction: row;
+  gap: 122px;
+  /*background-color: lightsalmon;*/
+  margin-top: 300px;
+}
+
+/* 텍스트 */
+#portfolio .text {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  /*background-color: lightgreen;*/
+}
+
+#portfolio .text p:nth-of-type(1) {
+  font-size: 26px;
+  margin-bottom: 46px;
+}
+
+#portfolio .text p:nth-of-type(1) span {
+  font-family: 'NanumSquareAcb';
+  font-size: 32px;
+}
+
+#portfolio .text p:nth-of-type(2),
+#portfolio .text p:nth-of-type(3) {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#portfolio .text p:nth-of-type(2) {
+  margin-bottom: 30px;
+}
+
+#portfolio .text p:nth-of-type(3) {
+  margin-bottom: 60px;
+}
+
+/* 버튼 설정 */
+#portfolio .text .bt {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+#portfolio .text .bt a {
+  padding: 15px 30px;
+  font-family: 'NanumSquareAcb';
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.2s ease;
+}
+
+#portfolio .text .bt a:hover {
+  background-color: #0F147A;
+}
+
+
+
+/* 모니터 내 이미지 설정 */
+#portfolio .img {
+  flex: 0 0 629px;
+  /*width: 629px;*/
+  height: 491px;
+  background-image: url(./img/monitor.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#portfolio .img .dearscent_img {
+  /*width: 600px;*****/
+  width: 95%;
+  height: 299px;
+  background-image: url(./img/portfolio01.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 16px;
+  left: 15px;
+}
+
+#portfolio .img .edawon_img {
+  width: 600px;
+  height: 299px;
+  background-image: url(./img/portfolio02.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 16px;
+  right: 15px;
+}
+
+
+/* 푸터영역 */
+footer {
+  width: 100%;
+  height: 431px;
+  background-color: #0D0E26;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+  color: #fff;
+}
+
+footer p:nth-of-type(1) {
+  font-size: 22px;
+  line-height: 200%;
+  text-align: center;
+}
+
+footer p:nth-of-type(2) {
+  font-family: 'NanumSquareAcb';
+  font-size: 45px;
+}
+

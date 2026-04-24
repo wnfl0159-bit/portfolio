@@ -1,0 +1,583 @@
+@charset "UTF-8";
+
+/* 나눔스퀘어 폰트 굵기별 스타일
+font-family: 'NanumSquareLight';
+font-family: 'NanumSquare';
+font-family: 'NanumSquareBold';
+font-family: 'NanumSquareExtraBold';
+font-family: 'NanumSquareAcb';
+font-family: 'NanumSquareAceb';
+font-family: 'NanumSquareAcl';
+font-family: 'NanumSquareAcr';
+*/
+
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ol, li {
+  list-style: none;
+}
+
+/*헤더 영역*/
+header {
+  width: 100%;
+  height: 88px;
+  background-color: #fff;
+  padding: 15px 70px 10px 70px;
+  position: sticky; /*영역 공간 차지하면서 위치 고정*/
+  top: 0;
+  left: 0;
+  z-index: 1000; /* 이 숫자가 클수록 다른 요소보다 화면 앞쪽(위)에 위치하게 됩니다. */
+  box-shadow: 5px 0 5px #ccc;
+}
+header>a {
+  width: 177px;
+  height: 63px;
+  margin-right: 47px;
+  /*background-color: aqua;*/
+  float: left;
+  background-image: url(../img/etc/header_logo.png);
+  background-size: contain;
+  background-position: center;
+  font-size: 0px;
+}
+/*메인메뉴 네비*/
+header .mainMenu_n1 {
+  width: 281px;
+  height: 63px;
+  line-height: 63px;
+  /*background-color: lightgreen;*/
+  display: inline-block;
+}
+header .mainMenu_n1 ul {
+  width: 281px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+}
+header .mainMenu_n1 ul li {
+  font-size: 15px;
+  font-family: 'NanumSquareBold';
+  /*background-color: lightsalmon;*/
+  float: left;
+  margin-top: 5px;
+}
+
+/*로그인&회원가입*/
+header .mainMenu_n2{
+  width: 183px;
+  height: 63px;
+  line-height: 63px;
+  /*background-color: lightgreen;*/
+  display: inline-block;
+  float: right;
+}
+header .mainMenu_n2 ul {
+  width: 183px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+}
+header .mainMenu_n2 ul li {
+  font-size: 15px;
+  font-family: "NanumSquarOTF";
+  font-weight: 400;
+  /*background-color: lightsalmon;*/
+  float: left;  
+  margin-top: 5px;
+}
+header .mainMenu_n2 ul li:nth-of-type(3) img {
+  margin-top: 20px;
+}
+
+/*섹션 가로 정렬*/
+section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/*메인 좌측 이미지*/
+#left {
+  flex: 0 0 calc(544.5 / 1920 * 100%);
+  /*width: 544.5px;*/
+  height: 1695px;
+  background-image: url(../img/signUp/signup.jpg);
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#left .text {
+  position: absolute;
+  left: 88px;
+  top: 387px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#left .text h2 {
+  font-family: 'NanumSquareBold';
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: 0.1em;
+}
+#left .text p {
+  font-family: 'NanumSquareBold';
+  font-size: 20px;
+  color: #123264;
+}
+
+.highlight {
+  /* 세련된 밑줄 스타일 */
+  text-decoration: underline;
+  text-decoration-thickness: 2px;    /* 선 굵기 */
+  text-underline-offset: 8px;        /* 글자와 선 사이 간격 */
+}
+
+
+/*메인 영역*/
+#middle {
+  flex: 1;
+  /*width: 831px;*/
+  height: 1695px;
+  padding: 0px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+  /*background-color: lightblue;*/
+}
+
+/*메인 타이틀*/
+#middle .title h2 {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+#middle .title p {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  color: #404040;
+}
+
+/*입력칸*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  padding-bottom: 30px;
+}
+.input01 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* 체크박스 숨기기 */
+.hidden-check {
+  display: none;
+}
+.input01 .title,
+.input02 .title {
+  display: block;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  color: #848484;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-bottom: 10px;
+}
+.hidden-check:hover {
+  color: #000000; /* 호버 시 색상 강조 */
+}
+
+/* 펼쳐질 영역 초기 상태 (숨김) */
+.expand-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* 부드러운 가속도 */
+}
+
+/* 체크박스가 선택되었을 때 펼침 상태 */
+.hidden-check:checked ~ .expand-content {
+  max-height: 30px; /* 입력창 높이에 맞춰 조절 */
+  opacity: 1;
+  /*margin-top: 10px;
+  margin-bottom: 20px;*/
+}
+
+/* 체크박스 선택 시 라벨 색상 고정 */
+.hidden-check:checked ~ label {
+  color: #123264; /*  메인 컬러로 강조 */
+}
+
+/* 체크박스 선택 시 라인 색상 및 두께 변경*/
+.hidden-check:checked ~ .line {
+  border-bottom: 2px solid #123264;
+}
+
+/* 실제 Input 스타일 */
+.main-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 0 10px 5px;
+  /*font-family: 'NanumSquareOTF';*/
+  font-size: 16px;
+  background: transparent;
+  /*background-color: lightcoral;*/
+}
+
+/* 라인 스타일 */
+.line {
+  width: 100%;
+  height: 0px;
+  border-bottom: 1px solid #848484;
+}
+.input01 .expand-content,
+.input02 .expand-content {
+  /*background-color: lightgreen;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* 수직 중앙 정렬 */
+}
+#toggleBtn {
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/icon/eye01.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 0px;
+  /*background-color: lightcoral;*/
+  cursor: pointer;
+}
+#toggleBtn:hover {
+  background-image: url(../img/icon/eye02.png);
+}
+
+.id {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 5px;
+  /*background-color: lightcoral;*/
+}
+
+.id .id_wrap {
+  flex: 0 0 calc(480 / 631 * 100%);
+  /*width: 480px;*/
+}
+
+/*아이디 중복확인, 주소검색 버튼*/
+.id button,
+.address_wrap button {
+  width: 100%;
+  padding: 10px 19px;
+  border: 1px solid #848484;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+/* 버튼 호버 시 색상 변경 */
+.id button:hover,
+.address_wrap button:hover {
+  background-color: #FEE581;
+}
+
+/*주소 입력칸*/
+.address_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.address_wrap>div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 5px;
+}
+
+/* input과 line 사이 간격조절 */
+.postal {
+  flex: 0 0 calc(527 / 631 * 100%);
+  /*width: 527px;*/
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.address_wrap>div:nth-child(2),
+.address_wrap>div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* addreess - input 입력칸 디자인 */
+.address-group .address {
+  width: 100%;
+  height: 18px;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  background: transparent;
+  /*background-color: lightcoral;*/
+}
+
+/* 주소, 생년월일 label */
+.address-group label,
+.birth-label {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* 생년월일 - 컨테이너 및 라벨 */
+.birth-container {
+  width: 100%;
+  /*background-color: lightgray;*/
+}
+
+/* 입력창 + 버튼 정렬 */
+.birth-row {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  /*background-color: lightgoldenrodyellow;*/
+}
+
+/* 입력 영역 (밑줄 스타일) */
+.birth-inputs {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  border-bottom: 1px solid #848484; /* 이미지의 하단 라인 */
+  padding-bottom: 10px;
+  /*background-color: lightblue;*/
+}
+
+.birth-inputs input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+}
+
+/* 입력칸별 너비 조절 */
+.input-yyyy { width: 50px; }
+.input-mm, .input-dd { width: 30px; }
+
+/* placeholder 색상 */
+.birth-inputs input::placeholder {
+  color: #848484;
+}
+
+.divider {
+  margin: 0 5px;
+  color: #848484;
+}
+
+/* 양력/음력 버튼 */
+.solar-lunar-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.solar-lunar-group input {
+  display: none;
+}
+
+.solar-lunar-group label {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  background-color: #FFFFFF; /* 기본: 흰 바탕 */
+  color: #000000;            /* 기본: 검정 글씨 */
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease; /* 색상 변경 시 부드러운 효과 */
+}
+
+.solar-lunar-group input:checked + label {
+  background-color: #000; /* 활성: 검정 바탕 */
+  color: #FFFFFF;            /* 활성: 흰 글씨 */
+}
+
+.input02 {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+}
+
+.input02 .main-input {
+  font-family: 'NanumSquareBold';
+}
+
+/* 약관 체크박스 */
+.terms-container {
+  width: 100%;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+}
+
+.term-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.term-label-bold {
+  font-weight: 700;
+}
+
+/* 계층 구조 여백 */
+.term-list { padding-left: 20px; }
+.term-list-sub { padding-left: 30px; }
+
+.custom-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #123264; /* 체크 시 배경색상 변경 */
+}
+
+/* 회원가입 버튼 */
+form>button {
+  width: 100%;
+  height: 58px;
+  background: #000000;
+  color: #fff;
+  border: none;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+}
+
+form>button:hover {
+  background-color: #404040;
+}
+
+/*메인 우측 이미지*/
+section #right {
+  flex: 0 0 calc(544.5 /1920 * 100%);
+  /*width: 544.5px;*/
+  height: 1695px;
+  background-image: url(../img/signUp/signup.jpg);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+/*푸터 영역*/
+footer {
+  width: 100%;
+  height: 377px;
+  /*padding: 70px;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #123264;
+  color: #fff;
+  padding: 70px;
+  align-items: flex-end;
+}
+/*좌측*/
+footer .left {
+  flex: 1;
+  /*width: 606px;*/
+  height: 237px;
+  /*background-color: lightblue;*/
+}
+footer .left a img {
+  width: 245px;
+  height: 67px;
+  margin-bottom: 5px;
+}
+footer .left p:nth-of-type(1) {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  margin-bottom: 45px;
+}
+footer .left ul {
+  margin-bottom: 15px;
+}
+footer .left li {
+  display: inline-block;
+  font-family: 'NanumSquareBold';
+  font-size: 15px;
+}
+footer .left P:nth-of-type(2) {
+  height: 60px;
+  font-family: 'NanumSquareBold';
+  font-size: 13px;
+  line-height: 150%;
+  /*background-color: lightcoral;*/
+}
+
+
+/*우측*/
+footer .right {
+  flex: 1;
+  /*width: 275px;*/
+  height: 214px;
+  display: flex;
+  flex-direction: column;   /* 요소를 위에서 아래로 쌓음 */
+  align-items: flex-end;    /* 모든 자식 요소를 오른쪽 끝으로 밀어냄 */
+  text-align: right;        /* 텍스트 내용 자체도 오른쪽 정렬 */
+  /*background-color: lightblue;*/
+}
+footer .right .icon {
+  /*width: 100%;*/
+  height: 36px;           /* 부모 높이 고정 */
+  display: flex;          /* 가로 나열 */
+  align-items: center;    /* 수직 중앙 정렬 */
+  justify-content: flex-end; /* 우측 끝으로 정렬 */
+  gap: 18px;               /* 이미지 사이 간격 (선택사항) */
+  /*background-color: lightcoral;*/
+  margin-bottom: 20px;
+}
+footer .right .img {
+  height: auto;           /* 이미지 비율 유지 */
+  max-height: 100%;       /* 부모 높이를 넘지 않게 설정 */
+}
+footer .right p:nth-of-type(1) {
+  height: 36px;
+  font-family: 'NanumSquareBold';
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+footer .right p:nth-of-type(2) {
+
+  height: 24px;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  margin-bottom: 10px;
+  /*background-color: lightcoral;*/
+}
+footer .right p:nth-of-type(3) {
+  height: 48px;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  text-align: center;
+  line-height: 150%;
+  /*background-color: lightcoral;*/
+}

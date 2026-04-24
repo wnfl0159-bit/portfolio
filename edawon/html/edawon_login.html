@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--헤더 영역-->
+  <header>
+    <!--상단 회원가입 팝업 버튼-->
+    <div id="top-notice" class="promo-bar">
+      <p>회원가입 후 시그니처 원두를 10% 할인된 가격에 구입해보세요!</p>
+      <button class="close-btn"><img src="../img/icon/close.png" alt="" width="12.2" height="12.2"></button>
+    </div>
+
+    <!--로고 및 메뉴들-->
+    <nav>
+      <ul class="nav_left">
+        <li><a href="./edawon_sub01.html" data-hover="쇼핑">SHOP</a></li>
+        <li><a href="./edawon_sub02.html" data-hover="커스텀">CUSTOM</a></li>
+        <li><a href="./edawon_sub03.html" data-hover="도매">WHOLESALE</a></li>
+        <li><a href="./edawon_sub04.html" data-hover="회사소개">ABOUT</a></li>
+        <li><a href="./edawon_sub05.html" data-hover="커뮤니티">COMMUNITY</a></li>
+      </ul>
+
+      <a href="./edawon_index.html" class="logo"><img src="../img/icon/logo01.png" alt="" width="203" height="68"></a>
+
+      <ul class="nav_right">
+        <li class="ck_input">
+          <input type="checkbox" id="search_icon" class="hidden-check">
+          <input type="search" class="search_area" placeholder="검색">
+          <label for="search_icon"><img src="../img/icon/search.png" alt="" width="24" height="24"></label>
+        </li>
+        
+        <li><a href="./edawon_login.html">로그인</a></li>
+        <li><a href="./edawon_signup.html">회원가입</a></li>
+        <li><a href="#"><img src="../img/icon/shopping-basket.png" alt="" width="25" height="24.75"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--메인 영역-->
+  <section>
+    <form action="">
+      <p>로그인</p>
+
+      <input type="radio" name="tabmenu" id="tab01" class="tab_input" checked>
+      <input type="radio" name="tabmenu" id="tab02" class="tab_input">
+
+      <!--탭메뉴-->
+      <div class="login_filters">
+        <label for="tab01">회원</label>
+        <label for="tab02">비회원</label>
+      </div>
+
+      <!--로그인(회원)-->
+      <div class="login_list_A">
+
+        <div class="input_group">
+          <!--아이디-->
+          <div class="id">
+            <input type="checkbox" id="toggle-id" class="hidden-check">
+            <label for="toggle-id" class="title">일반 회원 / 사업자 회원 아이디</label>
+
+            <div class="expand-content">
+              <input type="text" class="main-input" placeholder="아이디를 입력하세요">
+            </div>
+            <div class="line"></div>
+          </div>
+
+          <!--비밀번호-->
+          <div class="pw">
+            <input type="checkbox" id="toggle-pw" class="hidden-check">
+            <label for="toggle-pw" class="title">비밀번호</label>
+
+            <div class="expand-content">
+              <input type="password" class="main-input" placeholder="비밀번호를 입력하세요">
+            </div>
+            <div class="line"></div>
+          </div>
+
+          <!--로그인 버튼-->
+          <button type="submit">로그인</button>
+
+          <!--아이디저장 및 찾기-->
+          <div class="input_wrap">
+            <div class="save">
+              <input type="checkbox" class="id_save" id="check">
+              <label for="check">아이디 저장</label>
+            </div>
+            <a href="#">아이디/비밀번호 찾기</a>
+          </div>
+        </div>
+
+        <!--회원가입-->
+        <div class="singUp">
+          <div class="title">
+            <img src="../img/icon/bulb.png" alt="" width="21.5" height="22.81">
+            <p>회원이 아닌신가요?</p>
+          </div>
+          <a href="./edawon_signup.html">회원가입</a>
+        </div>
+
+        <!--간편 로그인-->
+        <div class="sns_login">
+          <div class="title">
+            <img src="../img/icon/bling.png" alt="" width="23.75" height="21.84">
+            <p>간편 로그인</p>
+          </div>
+          <div class="sns_group">
+            <a href="#" class="naver"><img src="../img/icon/naver.png" alt="naver" width="75" height="14.69"></a>
+            <a href="#" class="kakao"><img src="../img/icon/kakao.png" alt="kakao" width="58.85" height="18"></a>
+          </div>
+        </div>
+
+      </div> <!--login_list_A-->
+
+      <!--로그인(비회원)-->
+      <div class="login_list_B">
+
+        <!--이메일 주소-->
+        <div class="input_group">
+          <!--아이디-->
+          <div class="email">
+            <input type="checkbox" id="toggle-email" class="hidden-check">
+            <label for="toggle-email" class="title">이메일</label>
+
+            <div class="expand-content">
+              <input type="text" class="main-input" placeholder="이메일을 입력하세요">
+            </div>
+            <div class="line"></div>
+          </div>
+
+          <!--로그인 버튼-->
+          <button type="submit">비회원 로그인</button>
+        </div>
+
+        <!--회원가입-->
+        <div class="singUp">
+          <div class="title">
+            <img src="../img/icon/bulb.png" alt="" width="21.5" height="22.81">
+            <p>회원이 아닌신가요?</p>
+          </div>
+          <a href="./edawon_signup.html">회원가입</a>
+        </div>
+
+        <!--간편 로그인-->
+        <div class="sns_login">
+          <div class="title">
+            <img src="../img/icon/bling.png" alt="" width="23.75" height="21.84">
+            <p>간편 로그인</p>
+          </div>
+          <div class="sns_group">
+            <a href="#" class="naver"><img src="../img/icon/naver.png" alt="naver" width="75" height="14.69"></a>
+            <a href="#" class="kakao"><img src="../img/icon/kakao.png" alt="kakao" width="58.85" height="18"></a>
+          </div>
+        </div>
+
+      </div> <!--login_list_B-->
+
+    </form>
+  </section>
+
+  <!--푸터 영역-->
+  <footer id="footer">
+    <div class="top">
+      <div class="left">
+        <a href="./edawon_index.html"><img src="../img/icon/symbol.png" alt="" width="124" height="99"></a>
+        <ul>
+          <li><a href="./edawon_sub04.html" target="_blank">회사소개</a></li>
+          <li><a href="#" target="_blank">이용약관</a></li>
+          <li><a href="#" target="_blank">개인정보처리방침</a></li>
+        </ul>
+      </div>
+
+      <div class="sns">
+        <a href="https://blog.naver.com/edawoncokr" target="_blank"><img src="../img/icon/nblog.png" alt="" width="107" height="43"></a>
+        <a href="https://www.instagram.com/edawoncokr/" target="_blank"><img src="../img/icon/instagram.png" alt="" width="40" height="40"></a>
+        <a href="https://youtube.com/@tv-gk7sj?si=TORfUEwujIfjdJpv" target="_blank"><img src="../img/icon/youtube.png" alt="" width="50" height="35"></a>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="bottom">
+      <div class="left">
+        상호명 이다원  대표자명 신현주<br>
+        주소 경기도 용인시 기흥구 구성로 279번길 21<br>
+        대표전화 031-266-0280  사업자등록번호 647-28-00292<br>
+        통신판매업신고번호 2017-용인기흥-0938  개인정보보호 책임자 신현주
+      </div>
+      <div class="middle">
+        고객센터<br>
+        <span>031-266-0280</span><br>
+        평일 오전 9시 ~ 오후 6시 / 토,일,공휴일 휴무<br>
+        KB국민 353901-01-255148  /  예금주 신현주(이다원)
+      </div>
+      <div class="right">
+        <p>
+          배송조회<br>
+          <span>1588-9988</span>
+        </p>
+        <a href="https://www.ilogen.com/web/personal/tkSearch" target="_blank">[ 로젠택배 배송조회 ]</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--스크립트 설정-->
+  <script>
+    // 제어할 요소들을 찾아 변수에 담습니다.
+    const topNotice = document.getElementById('top-notice');
+    const closeBtn = topNotice.querySelector('.close-btn');
+
+    // [단계 1] 페이지가 열리자마자 '닫은 기록'이 있는지 확인합니다.
+    // 'hideBanner'라는 이름의 데이터가 'true'라면 배너를 아예 보여주지 않습니다.
+    if (sessionStorage.getItem('hideBanner') === 'true') {
+      topNotice.style.display = 'none';
+    }
+
+    // [단계 2] 닫기 버튼을 클릭했을 때의 동작
+    closeBtn.addEventListener('click', () => {
+      // 화면에서 즉시 숨깁니다.
+      topNotice.style.display = 'none';
+      
+      // [단계 3] 브라우저 저장소에 "이 사용자는 배너를 닫았음"이라고 기록합니다.
+      // sessionStorage는 브라우저 탭을 닫기 전까지 유지됩니다.
+      sessionStorage.setItem('hideBanner', 'true');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+</head>
+<body id="top">
+  <!--헤더 영역-->
+  <header>
+    <a href="./DearScent_index.html">메인로고</a>
+    <nav class="mainMenu_n1">
+      <ul>
+        <li><a href="./DearScent_sub01.html">SHOP</a></li>
+        <li><a href="./DearScent_sub02.html">EVENT</a></li>
+        <li><a href="./DearScent_sub03.html">NOTICE</a></li>
+        <li><a href="./DearScent_sub04.html">ABOUT</a></li>
+      </ul>
+    </nav>
+    <nav class="mainMenu_n2">
+      <ul>
+        <li><a href="./DearScent_login.html">로그인</a></li>
+        <li><a href="./DearScent_signup.html">회원가입</a></li>
+        <li><a href="#"><img src="../img/icon/basket-shopping.png" alt=""></a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <!--왼쪽 이미지-->
+    <div id="left">
+      <div class="text">
+        <h2>Dear Scent</h2>
+        <p>THE ART OF SENSORY EXPERIENC</p>
+      </div>
+    </div>
+
+    <!--메인 영역-->
+    <div id="middle">
+      <div class="title">
+        <h2>Sign In</h2>
+        <p>환영합니다. 디어센트의 감각적인 세계를 경험해보세요.</p>
+      </div>
+
+      <form action="">
+        <!--입력칸-->
+        <div class="input01">
+          <div class="id">
+            <input type="checkbox" id="toggle-id" class="hidden-check">
+            <label for="toggle-id" class="title">User ID (아이디)</label>
+
+            <div class="expand-content">
+              <input type="text" class="main-input" placeholder="아이디를 입력하세요">
+            </div>
+            <div class="line"></div>
+          </div>
+          <div class="pw">
+            <input type="checkbox" id="toggle-pw" class="hidden-check">
+            <label for="toggle-pw" class="title">Password (비밀번호)</label>
+
+            <div class="expand-content">
+              <input type="password" class="main-input" placeholder="비밀번호를 입력하세요">
+              <div id="toggleBtn">보기</div>
+            </div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <!--아이디 저장 및 찾기-->
+        <div class="input02">
+          <div class="save">
+            <input type="checkbox" class="id_save" id="check">
+            <label for="check">아이디 저장</label>
+          </div>
+          <a href="#">아이디/비밀번호 찾기</a>
+        </div>
+
+        <!--로그인, 회원가입 버튼-->
+        <div class="buttons">
+          <button type="submit" class="login">로그인</button>
+          <a href="./DearScent_signup.html" target = "_self"><button type="button" class="signin">회원가입</button></a>
+        </div>
+
+        <!--소셜 로그인-->
+        <p>회원가입 없이 간편하게 로그인하세요.</p>
+
+        <div class="social-icons">
+          <a href="#" class="kakao"></a>
+          <a href="#" class="naver"></a>
+        </div>
+      </form>
+    </div>
+
+    <!--오른쪽 이미지-->
+    <div id="right"></div>
+  </section>
+
+  <!--푸터 영역-->
+  <footer>
+    <div class="left">
+      <ul>
+        <li><a href="#">이용약관</a></li>
+        <li>│</li>
+        <li><a href="#">개인정보처리방침</a></li>
+      </ul>
+      <p>
+        ㈜디어센트 │ 대표 : 한주리 │ 주소 : 서울특별시 강남구 테헤란로 000 <br>
+        사업자 등록번호 : 000-00-00000 │ 통신판매업신고번호 : 2025-서울강남-0000 <br>
+        개인정보보호책임자 : 한주리 │ 메일 : hello@dearscent.com
+      </p>
+    </div>
+
+    <div class="wrap">
+      <div class="center">
+        <div class="icon">
+          <img src="../img/icon/instagram-logo.png" alt="instagram-logo">
+          <img src="../img/icon/youtube-logo.png" alt="youtube-logo">
+        </div>
+        <p>고객센터 070-2537-2537</p>
+      </div>
+      <div class="right">
+        <p>주말, 공휴일 휴무</p>
+        <p>
+          상담시간 : 10:00 ~ 17:00<br>
+          (점심시간 : 12:00 ~ 13:00)
+        </p>
+      </div>
+    </div>
+    
+  </footer>
+</body>
+</html>

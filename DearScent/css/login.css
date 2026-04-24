@@ -1,0 +1,459 @@
+@charset "UTF-8";
+
+/* 나눔스퀘어 폰트 굵기별 스타일
+font-family: 'NanumSquareLight';
+font-family: 'NanumSquare';
+font-family: 'NanumSquareBold';
+font-family: 'NanumSquareExtraBold';
+font-family: 'NanumSquareAcb';
+font-family: 'NanumSquareAceb';
+font-family: 'NanumSquareAcl';
+font-family: 'NanumSquareAcr';
+*/
+
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ol, li {
+  list-style: none;
+}
+
+/*헤더 영역*/
+header {
+  width: 100%;
+  height: 88px;
+  background-color: #fff;
+  padding: 15px 70px 10px 70px;
+  position: sticky; /*영역 공간 차지하면서 위치 고정*/
+  top: 0;
+  left: 0;
+  z-index: 1000; /* 이 숫자가 클수록 다른 요소보다 화면 앞쪽(위)에 위치하게 됩니다. */
+  box-shadow: 5px 0 5px #ccc;
+}
+header>a {
+  width: 177px;
+  height: 63px;
+  margin-right: 47px;
+  /*background-color: aqua;*/
+  float: left;
+  background-image: url(../img/etc/header_logo.png);
+  background-size: contain;
+  background-position: center;
+  font-size: 0px;
+}
+/*메인메뉴 네비*/
+header .mainMenu_n1 {
+  width: 281px;
+  height: 63px;
+  line-height: 63px;
+  /*background-color: lightgreen;*/
+  display: inline-block;
+}
+header .mainMenu_n1 ul {
+  width: 281px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+}
+header .mainMenu_n1 ul li {
+  font-size: 15px;
+  font-family: 'NanumSquareBold';
+  /*background-color: lightsalmon;*/
+  float: left;
+  margin-top: 5px;
+}
+
+/*로그인&회원가입*/
+header .mainMenu_n2{
+  width: 183px;
+  height: 63px;
+  line-height: 63px;
+  /*background-color: lightgreen;*/
+  display: inline-block;
+  float: right;
+}
+header .mainMenu_n2 ul {
+  width: 183px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+}
+header .mainMenu_n2 ul li {
+  font-size: 15px;
+  font-family: 'NanumSquareBold';
+  /*background-color: lightsalmon;*/
+  float: left;  
+  margin-top: 5px;
+}
+header .mainMenu_n2 ul li:nth-of-type(3) img {
+  margin-top: 20px;
+}
+
+/*섹션 가로 정렬*/
+section {
+  display: flex;
+  flex-direction: row;
+}
+
+/*메인 좌측 이미지*/
+#left {
+  /*width: 1168px;*/
+  flex: 0 0 calc(1168 / 1920 * 100%);
+  height: 760px;
+  background-image: url(../img/logIn/left_img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#left .text {
+  position: absolute;
+  left: 80px;
+  top: 611px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#left .text h2 {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 48px;
+  color: #123264;
+}
+#left .text p {
+  font-family: 'NanumSquareBold';
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+/*메인 영역*/
+#middle {
+  flex: 0 0 calc(600 / 1920 * 100%);
+  /*width: 600px;*/
+  height: 760px;
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  /*background-color: lightblue;*/
+}
+
+/*메인 타이틀*/
+#middle .title h2 {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+#middle .title p {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  color: #404040;
+}
+
+/*ID/PW 입력칸*/
+.input01 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* 체크박스 숨기기 */
+.hidden-check {
+  display: none;
+}
+.input01 .title {
+  display: block;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  color: #848484;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-bottom: 10px;
+}
+.hidden-check:hover {
+  color: #000000; /* 호버 시 색상 강조 */
+}
+
+/* 펼쳐질 영역 초기 상태 (숨김) */
+.expand-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* 부드러운 가속도 */
+}
+
+/* 체크박스가 선택되었을 때 펼침 상태 */
+.hidden-check:checked ~ .expand-content {
+  max-height: 30px; /* 입력창 높이에 맞춰 조절 */
+  opacity: 1;
+  /*margin-top: 10px;
+  margin-bottom: 20px;*/
+}
+
+/* 체크박스 선택 시 라벨 색상 고정 */
+.hidden-check:checked ~ label {
+  color: #123264; /*  메인 컬러로 강조 */
+}
+
+/* 체크박스 선택 시 라인 색상 및 두께 변경*/
+.hidden-check:checked ~ .line {
+  border-bottom: 2px solid #123264;
+}
+
+/* 실제 Input 스타일 */
+.main-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  /*font-family: 'NanumSquareOTF';*/
+  font-size: 16px;
+  background: transparent;
+  /*background-color: lightcoral;*/
+}
+
+/* 라인 스타일 */
+.line {
+  width: 100%;
+  height: 0px;
+  border-bottom: 1px solid #848484;
+}
+.input01 .expand-content:nth-of-type(1) {
+  /*background-color: lightgreen;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#toggleBtn {
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/icon/eye01.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 0px;
+  /*background-color: lightcoral;*/
+  cursor: pointer;
+}
+#toggleBtn:hover {
+  background-image: url(../img/icon/eye02.png);
+}
+
+/*아이디 저장 및 찾기*/
+.input02 {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input02 label,
+.input02 a {
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  color: #848484;
+}
+
+.input02 .save {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.save input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #123264; /* 체크 시 배경색상 변경 */
+}
+
+#check:hover ~ label, /* 체크박스 호버 시 색상변경 */
+#check:checked ~ label, /* 체크박스 클릭 시 색상변경 */
+.input02 a:hover {  /*엥커 호버 시 색상변경*/
+  color: #123264;
+}
+
+/*로그인, 회원가입 버튼*/
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 60px 0 50px;
+}
+.login {
+  width: 100%;
+  height: 58px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+}
+.login:hover {
+  background-color: #404040;
+}
+.signin {
+  width: 100%;
+  height: 58px;
+  border: 1px solid #000000;
+  background-color: #FFFFFF;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*소셜 로그인*/
+form>p {
+  /*background-color: lightcoral;*/
+  text-align: center;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+.social-icons { 
+  width: 269px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.social-icons .kakao {
+  flex: 0 0 calc(84.6 / 269 * 100%);
+  /*width: 84.6px;*/
+  height: 19.93px;
+  background-image: url(../img/icon/kakaoOff.png);
+}
+.social-icons .naver {
+  flex: 0 0 calc(82 / 269 * 100%);
+  /*width: 82px;*/
+  height: 20px;
+  background-image: url(../img/icon/naverOff.png);
+}
+.social-icons .kakao:hover {
+  background-image: url(../img/icon/kakaoOn.png);  /* 호버 시 아이콘 색상 변경 */
+}
+.social-icons .naver:hover {
+  background-image: url(../img/icon/naverOn.png);  /* 호버 시 아이콘 색상 변경 */
+}
+
+/*메인 우측 이미지*/
+#right {
+  flex: 0 0 calc(152 / 1920 * 100%);
+  /*width: 152px;*/
+  height: 760px;
+  background-image: url(../img/logIn/right_img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*푸터 영역*/
+footer {
+  width: 100%;
+  height: 232px;
+  padding: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #123264;
+  color: #fff;
+  padding: 70px;
+  align-items: flex-end;
+}
+/*푸터 - 좌측*/
+footer .left {
+  flex: 1;
+  height: 92px;
+  /*background-color: lightblue;*/
+}
+footer .left ul {
+  margin-bottom: 15px;
+}
+footer .left li {
+  display: inline-block;
+  font-family: 'NanumSquareBold';
+  font-size: 15px;
+}
+footer .left P {
+  height: 60px;
+  font-family: 'NanumSquareBold';
+  font-size: 13px;
+  line-height: 150%;
+  /*background-color: lightcoral;*/
+}
+
+/*푸터 - 우측*/
+.wrap {
+  flex: 1;
+  height: 92px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 40px;
+  /*background-color: lightblue;*/
+}
+
+/*SNS + 전화번호*/
+.center {
+  /*background-color: lightcoral;*/
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.center .icon {
+  width: 100%;
+  height: 36px;           /* 부모 높이 고정 */
+  display: flex;          /* 가로 나열 */
+  align-items: center;    /* 수직 중앙 정렬 */
+  justify-content: flex-end; /* 우측 끝으로 정렬 */
+  gap: 18px;               /* 이미지 사이 간격 (선택사항) */
+  /*background-color: lightcoral;*/
+}
+.center .img {
+  height: auto;           /* 이미지 비율 유지 */
+  max-height: 100%;       /* 부모 높이를 넘지 않게 설정 */
+}
+
+.center p {
+  font-family: 'NanumSquareBold';
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/*운영시간*/
+.right {
+  /*background-color: lightcoral;*/
+  width: 227px;
+  display: flex;
+  flex-direction: column; /* 요소를 위에서 아래로 쌓음 */
+  align-items: flex-end; /* 모든 자식 요소를 오른쪽 끝으로 밀어냄 */
+  gap: 10px;
+  text-align: right;
+}
+.right p:nth-of-type(1) {
+  height: 34px;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+}
+.right p:nth-of-type(2) {
+  width: 190px;
+  height: 48px;
+  font-family: 'NanumSquareBold';
+  font-size: 16px;
+  text-align: center;
+  line-height: 150%;
+  /*background-color: lightgreen;*/
+}
