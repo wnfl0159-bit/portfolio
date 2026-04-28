@@ -63,7 +63,7 @@ header nav ul{
 
 header nav ul li {
   font-family: 'NanumSquareAceb';
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 
@@ -89,12 +89,13 @@ main {
 #intro .text {
   display: flex;
   flex-direction: column;
+  /*background-color: lightsalmon;*/
 }
 
 #intro .text.left p {
   font-family: 'Hey August';
-  /*font-size: 200px;****/
-  font-size: 10vw;
+  /*font-size: 200px;*/
+  font-size: 10.41vw;
   color: rgba(0, 0, 0, 0.1);
 }
 
@@ -105,7 +106,7 @@ main {
 
 #intro .text.right p:nth-of-type(1) {
   font-family: 'KblJumpCondensed';
-  font-size: 70px;
+  font-size: 3.65vw;
   color: #0F147A;
   text-align: right;
 }
@@ -113,7 +114,7 @@ main {
 #intro .text.right p:nth-of-type(2) {
   font-family: 'KblJumpCondensed';
   font-display: swap;
-  font-size: 100px;
+  font-size: 5.2vw;
 }
 
 
@@ -135,14 +136,14 @@ main {
   padding-top: 150px;
 }
 
+/* 이미지 설정 */
 #aboutMe .img_group {
-  width: 436px;;
+  width: 436px;
   height: 570px;
   /*background-color: lightcoral;*/
   position: relative;
 }
 
-/* 이미지 설정 */
 #aboutMe .back_img {
   width: 419px;
   height: 514px;
@@ -204,10 +205,12 @@ main {
 
 /* 프로필 */
 #profile {
+  width: 80.9vw;
   position: relative;
   display: flex;
   flex-direction: row;
-  gap: 151px;
+  justify-content: space-between;
+  gap: 50px;
   padding: 100px 70px 60px;
   margin: 150px 0;
   border: 1px solid #000;
@@ -239,8 +242,10 @@ main {
 }
 
 #profile .bold {
+  min-width: 71px;
   font-family: 'KblJumpCondensed';
   font-size: 20px;
+  /*background-color: lightgreen;*/
 }
 
 #profile .n1 li p:nth-of-type(1) {
@@ -376,6 +381,7 @@ main {
   display: flex;
   flex-direction: row;
   gap: 40px;
+  /*background-color: lightslategrey;*/
 }
 
 #portfolio .text .bt a {
@@ -397,7 +403,7 @@ main {
 
 /* 모니터 내 이미지 설정 */
 #portfolio .img {
-  flex: 0 0 629px;
+  width: 629px;
   /*width: 629px;*/
   height: 491px;
   background-image: url(./img/monitor.png);
@@ -408,25 +414,29 @@ main {
 
 #portfolio .img .dearscent_img {
   /*width: 600px;*****/
-  width: 95%;
-  height: 299px;
+  width: 96%;
+  height: 300px;
   background-image: url(./img/portfolio01.png);
   background-size: cover;
   background-position: center;
   position: absolute;
-  top: 16px;
-  left: 15px;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px 10px 0 0;
 }
 
 #portfolio .img .edawon_img {
-  width: 600px;
-  height: 299px;
+  width: 96%;
+  height: 300px;
   background-image: url(./img/portfolio02.png);
   background-size: cover;
   background-position: center;
   position: absolute;
-  top: 16px;
-  right: 15px;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px 10px 0 0;
 }
 
 
@@ -454,3 +464,181 @@ footer p:nth-of-type(2) {
   font-size: 45px;
 }
 
+
+
+/*반응형 미디어 쿼리 지정*/
+/* 1400px 미만일 때 */
+@media screen and (max-width:1399px) {
+#aboutMe {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#profile .n1 li{
+  font-size: 15px;
+}
+#profile .bold {
+  font-size: 16px;
+}
+#profile .n2 ul {
+  font-size: 15px;
+}
+#profile .n3 ul {
+  font-size: 15px;
+}
+}
+
+/* 1200px 미만일 때 */
+@media screen and (max-width:1199px) {
+#profile {
+  width: fit-content;
+  flex-direction: column;
+  gap: 70px;
+}
+#profile .n2,
+#profile .n3 {
+  gap: 70px;
+}
+#profile .n1 li{
+  font-size: 18px;
+}
+#profile .bold {
+  font-size: 20px;
+}
+#profile .n2 ul {
+  font-size: 18px;
+}
+#profile .n3 ul {
+  font-size: 18px;
+}
+#portfolio .n1 {
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+#portfolio .n2 {
+  flex-direction: column-reverse;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+#portfolio .text .bt {
+  justify-content: center;  
+}
+}
+
+/* 900px 미만일 때 (탭) */
+@media screen and (max-width:899px) {
+#intro {
+  flex-direction: column-reverse;
+  gap: 100px;
+}
+#intro .text.left {
+  width: 100%;
+}
+#intro .text.left p {
+  font-size: 13vw; /*85px*/
+}
+#intro .text.right {
+  gap: 45px;
+}
+#intro .text.right p:nth-of-type(1) {
+  font-size: 4.45vw; /*40px*/
+}
+#intro .text.right p:nth-of-type(2) {
+  font-size: 7.23vw; /*65px*/
+}
+.title {
+  font-size: 50px;
+}
+#aboutMe .text_group p:nth-of-type(2) {
+  font-size: 3.6vw; /*27*/
+}
+#aboutMe .text_group p:nth-of-type(3),
+#aboutMe .text_group p:nth-of-type(4) {
+  font-size: 2.5vw; /*18*/
+}
+#portfolio .n1 {
+  margin-top: 100px;
+}
+#portfolio .img {
+  width: 448px;
+  height: 350px;
+}
+#portfolio .img .dearscent_img {
+  width: 96%;
+  height: 214px;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#portfolio .img .edawon_img {
+  width: 96%;
+  height: 214px;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+}
+
+
+/* 540px 미만일 때 (스마트폰) */
+@media screen and (max-width:539px) {
+header nav ul li {
+  font-size: 13px;
+}
+#aboutMe .img_group {
+  width: 255px;
+  height: 335px;
+}
+#aboutMe .back_img {
+  width: 223px;
+  height: 300px;
+}
+#aboutMe .top_img {
+  width: 223px;
+  height: 300px;
+}
+#profile .n1 li{
+  font-size: 11px;
+}
+#profile .bold {
+  font-size: 12px;
+}
+#profile .n2 ul {
+  font-size: 11px;
+}
+#profile .n3 ul {
+  font-size: 11px;
+}
+
+#profile .n3 ul:nth-of-type(2) li:nth-of-type(2) {
+  gap: 15px;
+}
+#profile .n3 img {
+  width: 25px;
+  height: 25px;
+}
+
+#profile .n3 img:nth-of-type(5) {
+  width: 43px;
+}
+
+footer {
+  height: 319px;
+  padding: 80px 0;
+  gap: 20px;
+}
+footer p:nth-of-type(1) {
+  font-size: 14px;
+}
+footer p:nth-of-type(2) {
+  font-size: 24px;
+}
+
+#scroll img {
+  width: 36px;
+  height: 35px;
+}
+}
