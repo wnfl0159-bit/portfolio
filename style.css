@@ -111,12 +111,6 @@ main {
   text-align: right;
 }
 
-#intro .text.right p span {
-  font-family: 'KblJumpCondensed';
-  font-size: 2.6vw;
-  color: #7C81DB;
-}
-
 #intro .text.right p:nth-of-type(2) {
   font-family: 'KblJumpCondensed';
   font-display: swap;
@@ -471,6 +465,14 @@ footer p:nth-of-type(2) {
   font-size: 45px;
 }
 
+footer p:nth-of-type(3) {
+  font-family: 'NanumSquareAcl';
+  font-size: 15px;
+  text-align: center;
+  color: #ccc;
+  margin-top: 20px;
+}
+
 
 
 /*반응형 미디어 쿼리 지정*/
@@ -554,9 +556,6 @@ footer p:nth-of-type(2) {
 #intro .text.right p:nth-of-type(1) {
   font-size: 45px;
 }
-#intro .text.right p span {
-  font-size: 32px;
-}
 #intro .text.right p:nth-of-type(2) {
   font-size: 65px;
 }
@@ -602,9 +601,6 @@ header nav ul li {
 }
 #intro .text.right p:nth-of-type(1) {
   font-size: 34px;
-}
-#intro .text.right p span {
-  font-size: 24px;
 }
 #intro .text.right p:nth-of-type(2) {
   font-size: 50px;
@@ -662,10 +658,6 @@ header nav ul li {
 #portfolio .text p:nth-of-type(1) {
   font-size: 18px;
 }
-#portfolio .text p:nth-of-type(1) span {
-  font-family: 'NanumSquareAcb';
-  font-size: 28px;
-}
 #portfolio .text p:nth-of-type(2),
 #portfolio .text p:nth-of-type(3) {
   font-size: 16px;
@@ -683,6 +675,9 @@ footer p:nth-of-type(1) {
 }
 footer p:nth-of-type(2) {
   font-size: 24px;
+}
+footer p:nth-of-type(3) {
+  font-size: 11px;
 }
 
 #scroll img {
