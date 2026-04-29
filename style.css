@@ -111,6 +111,12 @@ main {
   text-align: right;
 }
 
+#intro .text.right p span {
+  font-family: 'KblJumpCondensed';
+  font-size: 2.6vw;
+  color: #7C81DB;
+}
+
 #intro .text.right p:nth-of-type(2) {
   font-family: 'KblJumpCondensed';
   font-display: swap;
@@ -212,7 +218,7 @@ main {
   justify-content: space-between;
   gap: 50px;
   padding: 100px 70px 60px;
-  margin: 150px 0;
+  margin: 150px 30px;
   border: 1px solid #000;
   border-radius: 20px;
 }
@@ -449,7 +455,7 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 0;
+  padding: 100px 30px;
   color: #fff;
 }
 
@@ -501,6 +507,7 @@ footer p:nth-of-type(2) {
 }
 #profile .n1 li{
   font-size: 18px;
+  gap: 0;
 }
 #profile .bold {
   font-size: 20px;
@@ -544,10 +551,13 @@ footer p:nth-of-type(2) {
   gap: 45px;
 }
 #intro .text.right p:nth-of-type(1) {
-  font-size: 4.45vw; /*40px*/
+  font-size: 45px;
+}
+#intro .text.right p span {
+  font-size: 32px;
 }
 #intro .text.right p:nth-of-type(2) {
-  font-size: 7.23vw; /*65px*/
+  font-size: 65px;
 }
 .title {
   font-size: 50px;
@@ -566,13 +576,7 @@ footer p:nth-of-type(2) {
   width: 448px;
   height: 350px;
 }
-#portfolio .img .dearscent_img {
-  width: 96%;
-  height: 214px;
-  top: 11px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+#portfolio .img .dearscent_img,
 #portfolio .img .edawon_img {
   width: 96%;
   height: 214px;
@@ -585,8 +589,24 @@ footer p:nth-of-type(2) {
 
 /* 540px 미만일 때 (스마트폰) */
 @media screen and (max-width:539px) {
+header img {
+  width: 90px;
+  height: 55px;
+}
+header nav ul{
+  gap: 20px;
+}
 header nav ul li {
   font-size: 13px;
+}
+#intro .text.right p:nth-of-type(1) {
+  font-size: 34px;
+}
+#intro .text.right p span {
+  font-size: 24px;
+}
+#intro .text.right p:nth-of-type(2) {
+  font-size: 50px;
 }
 #aboutMe .img_group {
   width: 255px;
@@ -620,14 +640,46 @@ header nav ul li {
   width: 25px;
   height: 25px;
 }
-
 #profile .n3 img:nth-of-type(5) {
   width: 43px;
 }
+#portfolio .img {
+  width: 320px;
+  height: 250px;
+}
+#portfolio .img .dearscent_img,
+#portfolio .img .edawon_img {
+  width: 96%;
+  height: 154px;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px 5px 0 0;
+}
+
+
+#portfolio .text p:nth-of-type(1) {
+  font-size: 18px;
+}
+#portfolio .text p:nth-of-type(1) span {
+  font-family: 'NanumSquareAcb';
+  font-size: 28px;
+}
+#portfolio .text p:nth-of-type(2),
+#portfolio .text p:nth-of-type(3) {
+  font-size: 16px;
+}
+#portfolio .text .bt {
+  gap: 20px;
+}
+#portfolio .text .bt a {
+  font-size: 15px;
+}
+
 
 footer {
   height: 319px;
-  padding: 80px 0;
+  padding: 80px 50px;
   gap: 20px;
 }
 footer p:nth-of-type(1) {
