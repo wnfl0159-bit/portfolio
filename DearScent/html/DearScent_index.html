@@ -9,27 +9,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body id="top">
   <!--헤더 영역-->
   <div id="main_banner">
     <header>
       <a href="./DearScent_index.html">메인로고</a>
-      <nav class="mainMenu_n1">
-        <ul>
-          <li><a href="./DearScent_sub01.html">SHOP</a></li>
-          <li><a href="./DearScent_sub02.html">EVENT</a></li>
-          <li><a href="./DearScent_sub03.html">NOTICE</a></li>
-          <li><a href="./DearScent_sub04.html">ABOUT</a></li>
-        </ul>
-      </nav>
-      <nav class="mainMenu_n2">
-        <ul>
-          <li><a href="./DearScent_login.html">로그인</a></li>
-          <li><a href="./DearScent_signup.html">회원가입</a></li>
-          <li><a href="#"><img src="../img/icon/basket-shopping.png" alt=""></a></li>
-        </ul>
-      </nav>
+
+      <!-- 햄버거 버튼 -->
+      <div class="hamburger">
+        <span></span>
+      </div>
+      
+      <div class="nav_wrap">
+        <nav class="mainMenu_n1">
+          <ul>
+            <li><a href="./DearScent_sub01.html">SHOP</a></li>
+            <li><a href="./DearScent_sub02.html">EVENT</a></li>
+            <li><a href="./DearScent_sub03.html">NOTICE</a></li>
+            <li><a href="./DearScent_sub04.html">ABOUT</a></li>
+          </ul>
+        </nav>
+        <nav class="mainMenu_n2">
+          <ul>
+            <li><a href="./DearScent_login.html">로그인</a></li>
+            <li><a href="./DearScent_signup.html">회원가입</a></li>
+            <li><a href="#"><img src="../img/icon/basket-shopping.png" alt=""></a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <!--상단 매너 영역-->
     <div class="banner_text">
@@ -140,7 +149,10 @@
     <div class="img"></div>
     <div class="title">
       <h4>LIMITED EDITION</h4>
-      <h2>Summer Midnight Air</h2>
+      <h2>
+        Summer<br>
+        Midnight Air
+      </h2>
       <h3>
         뜨거웠던 하루가 저물고 선선한 밤공기가 창문을 통해 들어올 때,<br>
         그 짧지만 강렬한 휴식의 순간을 룸스프레이에 담았습니다.
@@ -200,8 +212,8 @@
     <div class="wrap">
       <div class="card n1">
         <div class="img"></div>
-        <p>디어센트 성수<span>FLAGSHIP</span></p>
         <ul>
+          <li>디어센트 성수<span>FLAGSHIP</span></li>
           <li>서울 성동구 연무장길 00 (성수역 3번 출구)</li>
           <li>11:00 AM - 20:00 PM (일요일 휴무)</li>
           <li>02-123-4567</li>
@@ -209,8 +221,8 @@
       </div>
       <div class="card n2">
         <div class="img"></div>
-        <p>디어센트 한남<span>ATELIER</span></p>
         <ul>
+          <li>디어센트 한남<span>ATELIER</span></li>
           <li>서울 용산구 이태원로 00 (한강진역 1번 출구)</li>
           <li>12:00 PM - 21:00 PM (연중무휴)</li>
           <li>02-987-6543</li>
@@ -256,6 +268,31 @@
       <a href="#top" class="quick_menu">
         <img src="../img/icon/up.png" alt="">
       </a>
+
+
+  <script>
+    /*햄버거 버튼_active*/
+    $(function(){
+      $('.hamburger').click(function(){
+        $(this).toggleClass('active'); // 햄버거 애니메이션 (X로 변경)
+        $('.nav_wrap').slideToggle(300, function(){
+          // 슬라이드 애니메이션이 끝난 후 실행되는 코드
+          if ($(this).is(':visible')) {
+            // 메뉴가 열린 상태라면 display를 flex로 고정!
+            $(this).css('display', 'flex');
+          }
+        }); // 메뉴가 아래로 부드럽게 슬라이드
+      });
+
+      // 모바일에서 메뉴를 닫아둔 상태로 PC 화면으로 넓히면 메뉴가 사라지는 현상을 막아줍니다.
+      $(window).resize(function() {
+        if ($(window).width() > 680) {
+          $('.nav_wrap').removeAttr('style'); 
+          $('.hamburger').removeClass('active');
+        }
+      });
+    });
+  </script>
       
 </body>
 </html>
