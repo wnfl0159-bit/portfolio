@@ -1033,7 +1033,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 #content05 .title {
   /*width: 556px;*/
   height: fit-content;
-  padding-right: 30px;
+  padding-right: 0px;
   /*background-color: lightcoral;*/
 }
 
