@@ -238,7 +238,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 /*타이틀 제목*/
 #content02 .title {
   height: fit-content;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   position: relative;
 }
 #content02 .title h4 {
@@ -843,7 +843,7 @@ html {
 
 /*컨텐츠 4*/
 #content04 {
-  height: 1228px;
+  height: fit-content;
 }
 #content04 .wrap {
   height: 740px;
@@ -925,6 +925,10 @@ header {
   padding: 15px 30px 10px;
 }
 
+header>a {
+  margin-right: 0px;
+}
+
 .hamburger { display: block; } /* 햄버거 버튼 보이기 */
 
 /* 모바일 네비게이션 랩 (초기에는 숨김) */
@@ -992,7 +996,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 
 /*컨텐츠 3*/
 #content03 {
-  height: 1536px;
+  height: 1244px;
   flex-direction: column;
 }
 /*우측 이미지*/
@@ -1003,7 +1007,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 
 /*컨텐츠 5*/
 #content05 {
-  height: 1358px;
+  height: 1116px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
@@ -1089,7 +1093,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 #content07 {
   width: 100%;
   height: fit-content;
-  padding: 100px 0;
+  padding: 100px 70px;
  /* background-color: lightblue;*/
 }
 #content07 .wrap {
@@ -1100,7 +1104,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
   gap: 50px;
 }
 #content07 .card {
-  width: 66.9vw;
+  width: 100%;
   height: fit-content;
   padding: 20px;
   border: 1px solid #ccc;
@@ -1124,7 +1128,8 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 #content02 .title h2,
 #content04 .title h2,
 #content06 .title h2,
-#content07 .title h2 {
+#content07 .title h2,
+#content04 .category h2 {
   font-size: 5.882vw;  /*40px*/
 }
 
@@ -1141,7 +1146,6 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
   font-size: 2.945vw;  /*20px*/
 }
 
-
 #content07 .title p {
   font-size: 4.12vw;  /*28px*/
 }
@@ -1155,6 +1159,28 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
   font-size: 2.465vw;  /*16px*/
 }
 
+#content04 .category h2 {
+  margin-bottom: 20px;
+}
+#content04 .category p {
+  font-size: 2.65vw;  /*18px*/
+}
+
+#content06 .card p:nth-of-type(1),
+#content06 .card p:nth-of-type(2) {
+  font-size: 4.7vw;  /*32px*/
+}
+#content06 .card p:nth-of-type(3) {
+  font-size: 2.945vw;  /*20px*/
+}
+
+#content07 .card li,
+#content07 .card li:nth-of-type(1) span {
+  font-size: 2.465vw;  /*16px*/
+}
+#content07 .card li:nth-of-type(1) {
+  font-size: 3.53vw;  /*24px*/
+}
 
 }
 
@@ -1186,7 +1212,8 @@ header>a {
 }
 
 
-#content02 {
+#content02,
+#content07 {
   padding: 100px 35px;
 }
 #content03,
