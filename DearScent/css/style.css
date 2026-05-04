@@ -32,7 +32,7 @@ ol, li {
   background-image: url(../img/main/main_banner01.png);
   background-size: cover;
   background-position: center;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   position: relative;
 }
 header {
@@ -54,6 +54,7 @@ header>a {
   background-image: url(../img/etc/header_logo.png);
   background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   font-size: 0px;
 }
 /*메인메뉴 네비*/
@@ -188,7 +189,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
   font-size: 24px;
   color: #000;
   margin-top: 50px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 /*컨텐츠 1*/
@@ -236,8 +237,8 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 }
 /*타이틀 제목*/
 #content02 .title {
-  height: 74px;
-  /*background-color: lightblue;*/
+  height: fit-content;
+  background-color: lightblue;
   position: relative;
 }
 #content02 .title h4 {
@@ -256,7 +257,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
   font-size: 16px;
   text-decoration: underline;
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   right: 0;
 }
 /*컨텐츠 2 내용*/
@@ -1031,12 +1032,17 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 /* 680px 미만일 때 */
 @media screen and (max-width:679px) {
 #main_banner {
-  height: 700px;
+  height: 800px;
 }
 .banner_text {
   top: 20%;
   left: 10%;
 }
+.banner_text p:nth-of-type(2) {
+  margin-top: 30px;
+}
+
+/*컨텐츠1*/
 #content01 p:nth-of-type(1) {
   font-size: 5.3vw;
 }
@@ -1055,6 +1061,7 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
   height: 300px;
 }
 
+
 /*카드 내 텍스트*/
 #content02 .card p:nth-of-type(1) {
   font-size: 2vw;
@@ -1064,21 +1071,9 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
   font-size: 2.85vw;
 }
 
-/*컨텐츠3, 컨텐츠 5*/
+/*컨텐츠3*/
 #content03 {
   height: 1244px;
-}
-#content03 .title h4,
-#content05 .title h4{
-  font-size: 2.465vw;
-}
-#content03 .title h2:nth-of-type(1),
-#content03 .title h2:nth-of-type(2),
-#content05 .title h2 {
-  font-size: 7vw;
-}
-#content03 .title h3{
-  font-size: 2.945vw;
 }
 
 /*컨텐츠6*/
@@ -1119,10 +1114,88 @@ header .mainMenu_n2 ul li:nth-of-type(3) img {
 #content07 .card.n2 {
   flex-direction: column;
 }
-
 #content07 .card .img {
   width: 100%;
   height: 200px;
+}
+
+/*각 컨텐츠별 텍스트 사이즈 조절*/
+
+#content02 .title h2,
+#content04 .title h2,
+#content06 .title h2,
+#content07 .title h2 {
+  font-size: 5.882vw;  /*40px*/
+}
+
+#content03 .title h2:nth-of-type(1),
+#content03 .title h2:nth-of-type(2),
+#content05 .title h2 {
+  font-size: 7vw;  /*48px*/
+}
+
+#content03 .title h3,
+#content04 .title h3,
+#content05 .title h3,
+#content06 .title h3 {
+  font-size: 2.945vw;  /*20px*/
+}
+
+
+#content07 .title p {
+  font-size: 4.12vw;  /*28px*/
+}
+
+#content02 .title h4,
+#content03 .title h4,
+#content05 .title h4,
+#content02 .title a,
+#content03 button a,
+#content05 button a {
+  font-size: 2.465vw;  /*16px*/
+}
+
+
+}
+
+
+/* 540px 미만일 때 */
+@media screen and (max-width:539px) {
+header {
+  height: fit-content;
+}
+
+header>a {
+  width: 128px;
+  height: 49px;
+}
+
+.hamburger {
+  width: 20px;
+  height: 20px;
+  /*background-color: lightgoldenrodyellow;*/
+}
+.hamburger span {
+  height: 4px;
+}
+.hamburger span::before {
+  top: -8px;
+}
+.hamburger span::after {
+  top: 8px;
+}
+
+
+#content02 {
+  padding: 100px 35px;
+}
+#content03,
+#content04,
+#content05 {
+  padding: 150px 35px;
+}
+#content06 {
+  padding: 120px 35px;
 }
 
 }
