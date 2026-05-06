@@ -61,7 +61,7 @@ header nav ul{
   /*background-color: lightblue;*/
 }
 
-header nav ul li {
+header nav ul li a {
   font-family: 'NanumSquareAceb';
   font-size: 1.375rem;
 }
@@ -440,6 +440,68 @@ main {
 }
 
 
+/*팀 작업*/
+#teamPlay {
+  /*background-color: lightblue;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 300px;
+}
+
+#teamPlay .sub_title {
+  font-family: 'NanumSquareAcb';
+  font-size: 18px;
+  color: #444;
+  margin: 10px 0 70px;
+}
+
+#teamPlay .teamPlay_group {
+  /*background-color: lightcoral;*/
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+
+#teamPlay .teamPlay_group .team {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  align-items: center ;
+}
+
+#teamPlay .teamPlay_group .img {
+  width: 355px;
+  aspect-ratio: 7 / 5;
+  /*height: 230px;*/
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+}
+
+#teamPlay .teamPlay_group .melon { background-image: url(./img/melon02.png); background-size: 80%; }
+#teamPlay .teamPlay_group .megacoffee { background-image: url(./img/mega02.png); background-size: 75%; }
+
+#teamPlay .teamPlay_group .hidden {
+  font-family: 'NanumSquareAcb';
+  font-size: 18px;
+  color: #444;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+#teamPlay .teamPlay_group .melon:hover { background-image: url(./img/melon01.png); background-size: 60%; }
+#teamPlay .teamPlay_group .megacoffee:hover { background-image: url(./img/mega01.png); background-size: 30%; }
+
+#teamPlay .teamPlay_group .img:hover ~ .hidden {
+  opacity: 1;
+}
+
+
 /* 푸터영역 */
 footer {
   width: 100%;
@@ -584,6 +646,24 @@ footer p:nth-of-type(3) {
   left: 50%;
   transform: translateX(-50%);
 }
+
+#teamPlay .sub_title,
+#teamPlay .teamPlay_group .hidden {
+  font-size: 14px;
+}
+
+#teamPlay .teamPlay_group .hidden {
+  opacity: 1;
+}
+
+#teamPlay .teamPlay_group {
+  gap: 40px;
+}
+
+#teamPlay .teamPlay_group .img {
+  width: 29.5vw;
+}
+
 }
 
 
@@ -596,7 +676,7 @@ header img {
 header nav ul{
   gap: 20px;
 }
-header nav ul li {
+header nav ul li a {
   font-size: 13px;
 }
 #intro .text.right p:nth-of-type(1) {
@@ -605,6 +685,8 @@ header nav ul li {
 #intro .text.right p:nth-of-type(2) {
   font-size: 50px;
 }
+
+/*자기소개*/
 #aboutMe .img_group {
   width: 255px;
   height: 335px;
@@ -617,6 +699,8 @@ header nav ul li {
   width: 223px;
   height: 300px;
 }
+
+/*포트폴리오*/
 #profile .n1 li{
   font-size: 11px;
 }
@@ -654,7 +738,6 @@ header nav ul li {
   border-radius: 5px 5px 0 0;
 }
 
-
 #portfolio .text p:nth-of-type(1) {
   font-size: 18px;
 }
@@ -668,8 +751,29 @@ header nav ul li {
 #portfolio .text .bt a {
   font-size: 15px;
 }
+#portfolio .text .bt a:nth-of-type(2) {
+  background-color: #0F147A;
+}
 
+/*팀 작업*/
+#teamPlay .teamPlay_group .hidden {
+  font-size: 10px;
+}
 
+#teamPlay .teamPlay_group .hidden {
+  opacity: 1;
+}
+
+#teamPlay .teamPlay_group {
+  gap: 30px;
+}
+
+#teamPlay .teamPlay_group .img {
+  width: 29.5vw;
+  border-radius: 10px;
+}
+
+/*푸터영역*/
 footer p:nth-of-type(1) {
   font-size: 14px;
 }
